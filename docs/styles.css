@@ -12,8 +12,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.92);backdrop-f
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
 .marca{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 .marca span{color:var(--gold)}
-nav{display:flex;gap:28px}
-nav a{font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--grey)}
+nav{display:flex;align-items:center;gap:28px}
+nav a{font-weight:600;font-size:14px;line-height:1;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--grey)}
 nav a:hover,nav a[aria-current=page]{color:var(--gold)}
 /* Tipografía */
 .eyebrow{font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
@@ -113,8 +113,8 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);fon
 }
 @media (max-width:420px){.marca{font-size:15px;letter-spacing:.03em} nav{gap:12px} nav a{font-size:11px;letter-spacing:.08em}}
 /* Selector de idioma */
-.idioma{display:flex;align-items:center;gap:6px;font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--dim)}
-.idioma a{color:var(--grey);text-decoration:none;padding:4px 2px}
+.idioma{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;line-height:1;letter-spacing:.16em;color:var(--dim)}
+.idioma a{color:var(--grey);text-decoration:none;padding:0;line-height:1}
 .idioma a[aria-current=true]{color:var(--gold)}
 .idioma a:hover{color:var(--white)}
 /* Seminarios: nivel y resultados */
@@ -133,4 +133,4 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);fon
 .condicion{border-left:4px solid var(--gold);padding:6px 0 6px 20px;color:var(--grey);font-size:16px}
 .condicion strong{display:block;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:22px;text-transform:uppercase;margin-bottom:4px}
 @media (max-width:1000px){.formatos{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:760px){.formatos,.condiciones{grid-template-columns:1fr} .idioma{font-size:11px;letter-spacing:.06em;gap:4px}}
+@media (max-width:760px){.formatos,.condiciones{grid-template-columns:1fr} .idioma{font-size:12px;letter-spacing:.1em;gap:4px}}
