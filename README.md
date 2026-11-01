@@ -12,7 +12,9 @@ Web profesional de Eduardo Ramírez Gracia, Rigging Artist y Technical Director.
 | `build.py` | Genera toda la web. Aquí están los datos: `PROYECTOS`, `SEMINARIOS`, `CENTROS`. |
 | `styles.css` | Estilos (negro, dorado, Barlow). Se copia a `docs/` al generar. |
 | `logos_svg/` | Logos de los centros en SVG blanco. |
-| `docs/` | **La web publicada.** GitHub Pages sirve esta carpeta. No se edita a mano: se regenera con `build.py`. |
+| `docs/` | **La web publicada.** Español en la raíz, inglés en `docs/en/`. GitHub Pages sirve esta carpeta. No se edita a mano: se regenera con `build.py`. |
+| `docs/img/` | Portadas, retrato, imagen para compartir y favicons. |
+| `tools/` | `traer_imagenes.py` (copió las imágenes de Wix, vía GitHub Actions) e `imagenes_sociales.py` (genera og:image y favicons). |
 
 ## Cambiar algo
 
@@ -22,10 +24,14 @@ Web profesional de Eduardo Ramírez Gracia, Rigging Artist y Technical Director.
 
 Cada proyecto genera su página `docs/proyecto-<nombre>.html` con ficha, portada y trailer de YouTube.
 
+## Idiomas
+
+Cada texto tiene versión `es` y `en` (función `L(es, en)` en `build.py`). El selector ESP | ENG de la cabecera enlaza con la misma página en el otro idioma.
+
 ## Imágenes
 
-Las portadas están todavía en el gestor de medios de Wix (`static.wixstatic.com`). Para independizarse de Wix, sube cada imagen a `docs/img/` y cambia su valor en `build.py` por `img/nombre.jpg`.
+Todas las imágenes están en `docs/img/`. Para una nueva, guárdala ahí y usa `img/nombre.jpg` en `build.py`.
 
 ## Dominio
 
-Cuando `eduardoramirezgracia.com` apunte a GitHub Pages, pon `DOMINIO = "eduardoramirezgracia.com"` en `build.py` y regenera: se crea `docs/CNAME`.
+`eduardoramirezgracia.com`, con DNS en Cloudflare apuntando a GitHub Pages (`docs/CNAME`).

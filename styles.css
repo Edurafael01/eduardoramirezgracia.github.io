@@ -113,3 +113,25 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);fon
  .centro{height:110px}
 }
 @media (max-width:420px){.marca{font-size:15px;letter-spacing:.03em} nav{gap:12px} nav a{font-size:11px;letter-spacing:.08em}}
+/* Selector de idioma */
+.idioma{display:flex;align-items:center;gap:6px;font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--dim)}
+.idioma a{color:var(--grey);text-decoration:none;padding:4px 2px}
+.idioma a[aria-current=true]{color:var(--gold)}
+.idioma a:hover{color:var(--white)}
+/* Seminarios: nivel y resultados */
+.card .lista{margin-top:14px;padding-left:18px;color:var(--grey);font-size:15px}
+.card .lista li{margin-top:4px}
+.card .lista li::marker{color:var(--gold)}
+.extra{margin-top:28px;color:var(--grey);font-size:16px}
+.extra strong{color:var(--white);font-weight:600}
+/* Cómo trabajo */
+.formatos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.formato{background:var(--card);border:1px solid var(--line);padding:28px}
+.formato h3{font-size:26px}
+.formato .meta{display:block;margin-top:10px;font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.formato p{margin-top:12px;color:var(--grey);font-size:16px}
+.condiciones{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+.condicion{border-left:4px solid var(--gold);padding:6px 0 6px 20px;color:var(--grey);font-size:16px}
+.condicion strong{display:block;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:22px;text-transform:uppercase;margin-bottom:4px}
+@media (max-width:1000px){.formatos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.formatos,.condiciones{grid-template-columns:1fr} .idioma{font-size:11px;letter-spacing:.06em;gap:4px}}
