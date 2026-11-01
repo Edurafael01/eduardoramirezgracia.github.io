@@ -5,7 +5,7 @@ import html, os, re, unicodedata
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(RAIZ, "docs")  # GitHub Pages publica esta carpeta
-DOMINIO = None  # poner "eduardoramirezgracia.com" cuando el dominio apunte a GitHub
+DOMINIO = "eduardoramirezgracia.com"
 EMAIL = "eduardoramirezgracia@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/eduardoramirezgracia"
 INSTAGRAM = "https://www.instagram.com/edu_madrigs"
