@@ -1,0 +1,115 @@
+
+:root{--bg:#0a0a0a;--card:#141414;--line:#2E2B25;--gold:#C9982A;--white:#F0EDE8;--grey:#A39D92;--dim:#6E695F;
+--pad:clamp(20px,5vw,80px);--max:1240px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Barlow',system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.marco{position:fixed;inset:0;border:6px solid var(--gold);pointer-events:none;z-index:50}
+/* Cabecera */
+header{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.marca{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.marca span{color:var(--gold)}
+nav{display:flex;gap:28px}
+nav a{font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--grey)}
+nav a:hover,nav a[aria-current=page]{color:var(--gold)}
+/* Tipografía */
+.eyebrow{font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;line-height:.95}
+h1{font-size:clamp(52px,8vw,112px);margin-top:20px}
+h2{font-size:clamp(40px,5.5vw,72px);margin-top:14px}
+h3{font-size:30px;line-height:1}
+h1 span,h2 span{color:var(--gold)}
+.lead{font-size:clamp(18px,1.6vw,22px);color:var(--grey);max-width:660px;margin-top:28px}
+/* Botones */
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.btn{display:inline-block;padding:16px 28px;font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold)}
+.btn.primario{background:var(--gold);color:var(--bg)}
+.btn:hover{background:var(--white);border-color:var(--white);color:var(--bg)}
+/* Secciones */
+section{padding:clamp(72px,10vw,128px) 0;border-top:1px solid var(--line)}
+section.hero{border-top:0;padding-top:clamp(64px,9vw,120px)}
+.cab{margin-bottom:56px}
+/* Hero con retrato */
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.retrato{width:260px;height:260px;border-radius:50%;border:4px solid var(--gold);object-fit:cover}
+/* Vídeo */
+.video{position:relative;aspect-ratio:16/9;border:1px solid var(--line);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* Reel con portada */
+.reel{display:block;overflow:hidden;text-decoration:none}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease,opacity .4s ease}
+.reel .play{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--gold);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.reel .play::after{content:"";position:absolute;left:38px;top:28px;border-style:solid;border-width:20px 0 20px 32px;border-color:transparent transparent transparent var(--bg)}
+.reel .ver{position:absolute;left:24px;bottom:20px;font-weight:700;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.reel:hover img{transform:scale(1.03);opacity:.85}
+.reel:hover .play{background:var(--white)}
+@media (max-width:760px){.reel .play{width:72px;height:72px;margin:-36px 0 0 -36px}.reel .play::after{left:29px;top:21px;border-width:15px 0 15px 24px}}
+/* Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0}
+.cover{aspect-ratio:16/9;background:var(--bg);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover.tipo{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:inset 0 0 0 4px var(--gold)}
+.cover .ce{font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.cover .ct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;line-height:.95;text-transform:uppercase}
+.cover .ct span{display:block;color:var(--gold)}
+.card .h{padding:28px 28px 0;display:flex;flex-direction:column;gap:12px}
+.card .tx{padding:14px 28px 0}
+.card .dt{padding:0 28px 28px}
+.card .meta{font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.card p{color:var(--grey);font-size:16px}
+.card dl{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px}
+.card dt{color:var(--dim);text-transform:uppercase;letter-spacing:.12em;font-weight:600;font-size:12px;padding-top:2px}
+.card dd{color:var(--white)}
+.enlace{text-decoration:none}
+.enlace::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card:hover{border-color:var(--gold)}
+.volver{font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);text-decoration:none}
+.volver:hover{color:var(--gold)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin-top:36px;max-width:560px;font-size:16px}
+.ficha dt{color:var(--dim);text-transform:uppercase;letter-spacing:.12em;font-weight:600;font-size:12px;padding-top:3px}
+.hero + section .cover{max-width:960px;margin:0 auto}
+.hero + section .cover .ct{font-size:clamp(40px,7vw,84px)}
+.hero + section .cover .ce{font-size:16px}
+/* Trailer en páginas de proyecto */
+.trailer .wrap>*{max-width:960px;margin-left:auto;margin-right:auto}
+.trailer .eyebrow{margin-bottom:20px}
+.yt{margin-top:16px}
+.yt a{font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);text-decoration:none}
+.yt a:hover{color:var(--gold)}
+/* Centros */
+.centros{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.centro{height:150px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+.centro svg{height:64px;width:auto;max-width:80%}
+.centro span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;text-transform:uppercase;letter-spacing:.02em}
+/* Contacto */
+.contacto{text-align:left}
+.contacto .lead{max-width:720px}
+.redes{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:32px}
+.redes a{overflow-wrap:anywhere}
+.redes a{font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);text-decoration:none}
+.redes a:hover{color:var(--gold)}
+/* Puente entre páginas */
+.puente{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:40px;padding-bottom:40px}
+.puente p{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:32px;text-transform:uppercase;line-height:1}
+.puente p span{color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+/* Responsive */
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+ .grid,.centros{grid-template-columns:1fr}
+ .hero-grid{grid-template-columns:1fr}
+ .retrato{width:160px;height:160px;order:-1}
+ nav{gap:16px} nav a{font-size:12px;letter-spacing:.1em}
+ .marca{font-size:18px}
+ header .wrap{height:64px}
+ .nav-sec{display:none}
+ .puente{flex-direction:column;align-items:flex-start}
+ .centro{height:110px}
+}
+@media (max-width:420px){.marca{font-size:15px;letter-spacing:.03em} nav{gap:12px} nav a{font-size:11px;letter-spacing:.08em}}
