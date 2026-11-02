@@ -85,7 +85,8 @@ section.hero{border-top:0;padding-top:clamp(64px,9vw,120px)}
 /* Centros */
 .centros{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .centro{height:150px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
-.centro svg{height:64px;width:auto;max-width:80%}
+.centro img{max-height:60px;max-width:78%;width:auto;height:auto}
+.centro img.cuadrado{max-height:84px}
 .centro span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;text-transform:uppercase;letter-spacing:.02em}
 /* Contacto */
 .contacto{text-align:left}
@@ -110,7 +111,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);fon
  header .wrap{height:64px}
  .nav-sec{display:none}
  .puente{flex-direction:column;align-items:flex-start}
- .centro{height:110px}
+ .centro{height:110px} .centro img{max-height:48px} .centro img.cuadrado{max-height:68px}
 }
 @media (max-width:420px){.marca{font-size:15px;letter-spacing:.03em} nav{gap:12px} nav a{font-size:11px;letter-spacing:.08em}}
 /* Selector de idioma */

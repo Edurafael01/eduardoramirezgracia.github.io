@@ -11,9 +11,8 @@ Web profesional de Eduardo Ramírez Gracia, Rigging Artist y Technical Director.
 |---|---|
 | `build.py` | Genera toda la web. Aquí están los datos: `PROYECTOS`, `SEMINARIOS`, `CENTROS`. |
 | `styles.css` | Estilos (negro, dorado, Barlow). Se copia a `docs/` al generar. |
-| `logos_svg/` | Logos de los centros en SVG blanco. |
 | `docs/` | **La web publicada.** Español en la raíz, inglés en `docs/en/`. GitHub Pages sirve esta carpeta. No se edita a mano: se regenera con `build.py`. |
-| `docs/img/` | Portadas, retrato, imagen para compartir y favicons. |
+| `docs/img/` | Portadas, retrato, imagen para compartir y favicons. Logos de los centros en `docs/img/logos/` (PNG blanco a partir de los originales). |
 | `tools/` | `traer_imagenes.py` (copió las imágenes de Wix, vía GitHub Actions) e `imagenes_sociales.py` (genera og:image y favicons). |
 
 ## Cambiar algo

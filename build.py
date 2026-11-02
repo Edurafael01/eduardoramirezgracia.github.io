@@ -170,7 +170,7 @@ SEMINARIOS = [
          datos=[("nivel", L("Intermedio", "Intermediate")), ("software", "Autodesk Maya"), ("impartido", L("Novedad 2027", "New in 2027"))]),
 ]
 
-# (nombre, archivo del logo en logos_svg/ o None para mostrar el nombre en texto). Universidades primero.
+# (nombre, archivo del logo en docs/img/logos/ sin extensión, o None para mostrar el nombre en texto). Universidades primero.
 CENTROS = [("CEU San Pablo", "ceu"), ("UNIR", "unir"), ("UFV", "ufv"), ("ECAM", "ecam"), ("Lightbox Academy", "lightbox"),
            ("CICE", "cice"), ("Trazos", "trazos"), ("Animworkshop", "animworkshop"), ("Movie School", None)]
 
@@ -190,8 +190,8 @@ e = html.escape
 def tr(v, lang):
     return v[lang] if isinstance(v, dict) else v
 
-def logo_svg(clave):
-    return open(os.path.join(RAIZ, "logos_svg", clave + ".svg")).read().strip()
+# Logos oficiales en PNG blanco (docs/img/logos/), a partir de los originales de cada centro.
+LOGOS_CUADRADOS = {"cice", "trazos", "ecam"}
 
 CSS = open(os.path.join(RAIZ, "styles.css")).read()
 
@@ -441,7 +441,7 @@ def docencia(lang):
     es = lang == "es"
     cards = "\n".join(tarjeta_seminario(lang, s) for s in SEMINARIOS)
     centros = "\n".join(
-        f'<div class="centro" role="img" aria-label="{e(n)}">{logo_svg(l)}</div>' if l else f'<div class="centro"><span>{e(n)}</span></div>'
+        f'<div class="centro"><img class="{"cuadrado" if l in LOGOS_CUADRADOS else ""}" src="{pre(lang)}img/logos/{l}.png" alt="{e(n)}" loading="lazy"></div>' if l else f'<div class="centro"><span>{e(n)}</span></div>'
         for n, l in CENTROS)
     titulo = ("Seminarios de rigging · " if es else "Rigging seminars · ") + NOMBRE
     desc = ("Seminarios de rigging de producción para escuelas y universidades, impartidos por un Rigging Artist y Technical Director en activo." if es else
