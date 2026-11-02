@@ -1,7 +1,7 @@
 name: Traer imágenes de Wix
 on:
   push:
-    paths: ["tools/traer_imagenes.py", ".github/workflows/traer-imagenes.yml"]
+    paths: ["tools/traer_imagenes.py", ".github/workflows/traer-imagenes.yml", "build.py"]
   workflow_dispatch:
 permissions:
   contents: write

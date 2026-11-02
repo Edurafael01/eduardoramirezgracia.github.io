@@ -29,6 +29,11 @@ def L(es, en):
 # Proyectos, del más reciente al más antiguo. Diddl va el último.
 # f = ficha en orden Cliente, Estudio, Rig. video = (id de YouTube, segundo de inicio, etiqueta es, etiqueta en).
 PROYECTOS = [
+    dict(s="blacksad", t=L("Blacksad", "Blacksad"), t1="Blacksad", t2="Fan Animation", a="2026",
+         img="036cf3_47cc1c6251a0418faa9f6e503dd5d1a2~mv2.jpg",
+         d=L("Múltiples rigs para una animación fan de Blacksad.", "Multiple rigs for a Blacksad fan animation."),
+         f=[("estudio", "Illusorium"), ("rig", L("Múltiples rigs", "Multiple rigs"))],
+         video=("t3qnuVscDes", 0, "Vídeo", "Video")),
     dict(s="totalenergies", t=L("TotalEnergies", "TotalEnergies"), t1="TotalEnergies", t2=L("Publicidad", "Commercial"), a="2026",
          img="036cf3_2a972a8c4c0744e58cf43abc2b1551ee~mv2.jpg",
          d=L("Rig del personaje principal de una pieza publicitaria para TotalEnergies.",
@@ -356,8 +361,8 @@ def profesional(lang):
     titulo = NOMBRE + " · Rigging Artist"
     desc = ("Rigging Artist y Technical Director en Madrid. Rigs corporales, faciales y de criaturas para series, cinemáticas y publicidad." if es else
             "Rigging Artist and Technical Director based in Madrid. Body, facial and creature rigs for series, cinematics and commercials.")
-    social = ("Demoreel y 15 proyectos de rigging: Secret Level, Marathon, Zeri, 30 Monedas y más. Disponible para estudios." if es else
-              "Demo reel and 15 rigging projects: Secret Level, Marathon, Zeri, 30 Coins and more. Available for studios.")
+    social = ("Demoreel y proyectos de rigging: Secret Level, Marathon, Zeri, 30 Monedas y más. Disponible para estudios." if es else
+              "Demo reel and rigging projects: Secret Level, Marathon, Zeri, 30 Coins and more. Available for studios.")
     lead = ("Rigs corporales, faciales y de criaturas para series, cinemáticas y publicidad. Créditos en Secret Level (Blur Studio · Amazon) y en el trailer cinemático de Marathon." if es else
             "Body, facial and creature rigs for series, cinematics and commercials. Credits on Secret Level (Blur Studio · Amazon) and the Marathon cinematic trailer.")
     botones = (f'<a class="btn primario" href="#demoreel">{"Ver demoreel" if es else "Watch demo reel"}</a>'
@@ -420,6 +425,18 @@ def como_trabajo(lang):
 </div>
 </div></section>"""
 
+SESION_YT = "tzMgbhzYOzA"  # Foro UNIR, 27/10/2026
+
+def sesion(lang):
+    es = lang == "es"
+    pie_ = ("Foro «Rigging artist ante la IA: así se crean los personajes 3D» · UNIR · 27 de octubre de 2026" if es else
+            "Forum \u201cRigging artist ante la IA: así se crean los personajes 3D\u201d · UNIR · 27 October 2026")
+    return f"""<section id="sesion" class="trailer"><div class="wrap">
+<p class="eyebrow">{"Así es una sesión" if es else "What a session looks like"}</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{SESION_YT}?rel=0" title="{e(pie_)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p class="yt">{e(pie_)} · <a href="https://www.youtube.com/watch?v={SESION_YT}" target="_blank" rel="noopener">{T["ver_yt"][lang]}</a></p>
+</div></section>"""
+
 def docencia(lang):
     es = lang == "es"
     cards = "\n".join(tarjeta_seminario(lang, s) for s in SEMINARIOS)
@@ -453,6 +470,8 @@ def docencia(lang):
 <div class="centros">
 {centros}
 </div></div></section>
+
+{sesion(lang)}
 
 {como_trabajo(lang)}
 
