@@ -467,6 +467,60 @@
       }
     },
     {
+      "id": "the-brink-of-infinity",
+      "titulo": {
+        "es": "The Brink of Infinity",
+        "en": "The Brink of Infinity"
+      },
+      "portada_texto": [
+        {
+          "es": "The Brink",
+          "en": "The Brink"
+        },
+        {
+          "es": "of Infinity",
+          "en": "of Infinity"
+        }
+      ],
+      "anio": "2023",
+      "imagen_web": "img/yt_cJT5d5Ue3ao.jpg",
+      "descripcion": {
+        "es": "Rig de personaje de Lizard para The Brink of Infinity, la cinemática de la temporada 2023 de League of Legends.",
+        "en": "Character rig for Lizard in The Brink of Infinity, the League of Legends Season 2023 cinematic."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Riot Games",
+            "en": "Riot Games"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Lizard · Rig de personaje",
+            "en": "Lizard · Character rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "cJT5d5Ue3ao",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Cinemática",
+          "en": "Cinematic"
+        }
+      }
+    },
+    {
       "id": "zeri-the-spark-of-zaun",
       "titulo": {
         "es": "Zeri: The Spark of Zaun",
