@@ -1,0 +1,834 @@
+{
+  "_nota": "Proyectos del más reciente al más antiguo. Diddl va el último. Ficha en orden Cliente, Estudio, Rig.",
+  "proyectos": [
+    {
+      "id": "blacksad",
+      "titulo": {
+        "es": "Blacksad",
+        "en": "Blacksad"
+      },
+      "portada_texto": [
+        {
+          "es": "Blacksad",
+          "en": "Blacksad"
+        },
+        {
+          "es": "Fan Animation",
+          "en": "Fan Animation"
+        }
+      ],
+      "anio": "2026",
+      "imagen_web": "img/036cf3_47cc1c6251a0418faa9f6e503dd5d1a2.jpg",
+      "descripcion": {
+        "es": "Múltiples rigs para una animación fan de Blacksad.",
+        "en": "Multiple rigs for a Blacksad fan animation."
+      },
+      "ficha": [
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Múltiples rigs",
+            "en": "Multiple rigs"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "t3qnuVscDes",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Vídeo",
+          "en": "Video"
+        }
+      }
+    },
+    {
+      "id": "totalenergies",
+      "titulo": {
+        "es": "TotalEnergies",
+        "en": "TotalEnergies"
+      },
+      "portada_texto": [
+        {
+          "es": "TotalEnergies",
+          "en": "TotalEnergies"
+        },
+        {
+          "es": "Publicidad",
+          "en": "Commercial"
+        }
+      ],
+      "anio": "2026",
+      "imagen_web": "img/036cf3_2a972a8c4c0744e58cf43abc2b1551ee.jpg",
+      "descripcion": {
+        "es": "Rig del personaje principal de una pieza publicitaria para TotalEnergies.",
+        "en": "Rig of the main character for a TotalEnergies commercial."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "TotalEnergies",
+            "en": "TotalEnergies"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Miopia",
+            "en": "Miopia"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Character rig",
+            "en": "Character Rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "6LG45b-x8TI",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Anuncio",
+          "en": "Commercial"
+        }
+      }
+    },
+    {
+      "id": "el-fantasma-de-la-quinta",
+      "titulo": {
+        "es": "El Fantasma de la Quinta",
+        "en": "The Quinta's Ghost"
+      },
+      "portada_texto": [
+        {
+          "es": "El Fantasma",
+          "en": "The Quinta's"
+        },
+        {
+          "es": "de la Quinta",
+          "en": "Ghost"
+        }
+      ],
+      "anio": "2025",
+      "imagen_web": "img/036cf3_4dc6122ad3f64b78bf977e5394cb2394.jpg",
+      "descripcion": {
+        "es": "Rig corporal de Goya y rigs corporales y faciales de Saturno y del pájaro.",
+        "en": "Body rig for Goya, and body and facial rigs for Saturn and the bird."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Illusorium & Martirio Films",
+            "en": "Illusorium & Martirio Films"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Goya · Saturno · pájaro",
+            "en": "Goya · Saturn · Bird"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "UC2GJT3PUS0",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "marathon-cinematic-trailer",
+      "titulo": {
+        "es": "Marathon · Cinematic Trailer",
+        "en": "Marathon · Cinematic Trailer"
+      },
+      "portada_texto": [
+        {
+          "es": "Marathon",
+          "en": "Marathon"
+        },
+        {
+          "es": "Cinematic Trailer",
+          "en": "Cinematic Trailer"
+        }
+      ],
+      "anio": "2025",
+      "imagen_web": "img/036cf3_ae6ea901d7984047b9acf65915a10507.jpg",
+      "descripcion": {
+        "es": "Rig de personaje de Man para el trailer cinemático de Marathon, dirigido por Alberto Mielgo.",
+        "en": "Character rig for Man in the Marathon cinematic trailer, directed by Alberto Mielgo."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Bungie",
+            "en": "Bungie"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Man · character rig",
+            "en": "Man, Character Rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "fvbEnWLRo1s",
+        "inicio": 101,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "secret-level-pac-man",
+      "titulo": {
+        "es": "Secret Level · PAC-MAN",
+        "en": "Secret Level · PAC-MAN"
+      },
+      "portada_texto": [
+        {
+          "es": "Secret Level",
+          "en": "Secret Level"
+        },
+        {
+          "es": "PAC-MAN",
+          "en": "PAC-MAN"
+        }
+      ],
+      "anio": "2024",
+      "imagen_web": "img/036cf3_a6c7a423f1394cb1ab3cd644ed6e6dec.jpg",
+      "descripcion": {
+        "es": "Rig de criatura de Beast para el episodio PAC-MAN de la serie antológica Secret Level.",
+        "en": "Creature rig for the Beast in the PAC-MAN episode of the anthology series Secret Level."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Blur Studio · Amazon",
+            "en": "Blur Studio · Amazon"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Beast · creature rig",
+            "en": "Beast, Creature Rig (simulation not included)"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "1hsuOFv5hRk",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "secret-level-spelunky",
+      "titulo": {
+        "es": "Secret Level · Spelunky",
+        "en": "Secret Level · Spelunky"
+      },
+      "portada_texto": [
+        {
+          "es": "Secret Level",
+          "en": "Secret Level"
+        },
+        {
+          "es": "Spelunky",
+          "en": "Spelunky"
+        }
+      ],
+      "anio": "2024",
+      "imagen_web": "img/036cf3_95df628c1bf74ee6b5681fbf396b8cc2.jpg",
+      "descripcion": {
+        "es": "Rig de personaje de Young Girl y rig mecánico para el episodio Spelunky.",
+        "en": "Character rig for the Young Girl and a mechanical rig for the Spelunky episode."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Blur Studio · Amazon",
+            "en": "Blur Studio · Amazon"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Young Girl · rig mecánico",
+            "en": "Young Girl, Character Rig · Mechanical Rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "1hsuOFv5hRk",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "secret-level-mega-man",
+      "titulo": {
+        "es": "Secret Level · Mega Man",
+        "en": "Secret Level · Mega Man"
+      },
+      "portada_texto": [
+        {
+          "es": "Secret Level",
+          "en": "Secret Level"
+        },
+        {
+          "es": "Mega Man",
+          "en": "Mega Man"
+        }
+      ],
+      "anio": "2024",
+      "imagen_web": "img/036cf3_f31ee0c1ead641fb85c59ea661e05eee.jpg",
+      "descripcion": {
+        "es": "Rigs corporales de Mega Man y Doctor Light, y rig de araña, para el episodio Mega Man.",
+        "en": "Body rigs for Mega Man and Doctor Light, plus a spider rig, for the Mega Man episode."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Blur Studio · Amazon",
+            "en": "Blur Studio · Amazon"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Mega Man · Doctor Light · araña",
+            "en": "Mega Man · Doctor Light · Spider"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "1hsuOFv5hRk",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "dungeon-fighter",
+      "titulo": {
+        "es": "Dungeon Fighter",
+        "en": "Dungeon Fighter"
+      },
+      "portada_texto": [
+        {
+          "es": "Dungeon",
+          "en": "Dungeon"
+        },
+        {
+          "es": "Fighter",
+          "en": "Fighter"
+        }
+      ],
+      "anio": "2023",
+      "imagen_web": "img/036cf3_dd67386ff4814f1e994085acaba9cf18.jpg",
+      "descripcion": {
+        "es": "Rigs de personaje de Shadow y Armour.",
+        "en": "Character rigs for Shadow and Armour."
+      },
+      "ficha": [
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Shadow · Armour",
+            "en": "Shadow & Armour, Character Rig"
+          }
+        }
+      ],
+      "video": null
+    },
+    {
+      "id": "sky-the-two-embers",
+      "titulo": {
+        "es": "Sky: The Two Embers",
+        "en": "Sky: The Two Embers"
+      },
+      "portada_texto": [
+        {
+          "es": "Sky",
+          "en": "Sky"
+        },
+        {
+          "es": "The Two Embers",
+          "en": "The Two Embers"
+        }
+      ],
+      "anio": "2023",
+      "imagen_web": "img/036cf3_e0c779c3e34245ac8d815bab85742039.jpg",
+      "descripcion": {
+        "es": "Rigs de múltiples personajes para Sky: The Two Embers.",
+        "en": "Rigs for multiple characters in Sky: The Two Embers."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "That Game Company",
+            "en": "That Game Company"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium · Orchid",
+            "en": "Illusorium · Orchid"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Múltiples rigs",
+            "en": "Multiple rigs"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "FWepS03YbFU",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "zeri-the-spark-of-zaun",
+      "titulo": {
+        "es": "Zeri: The Spark of Zaun",
+        "en": "Zeri: The Spark of Zaun"
+      },
+      "portada_texto": [
+        {
+          "es": "Zeri",
+          "en": "Zeri"
+        },
+        {
+          "es": "The Spark of Zaun",
+          "en": "The Spark of Zaun"
+        }
+      ],
+      "anio": "2022",
+      "imagen_web": "img/036cf3_08cbb93d717d4c8582eb321037d043f3.jpg",
+      "descripcion": {
+        "es": "Rig de Son of Urgoth para Zeri: The Spark of Zaun.",
+        "en": "Rig for the Son of Urgoth in Zeri: The Spark of Zaun."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Riot Games",
+            "en": "Riot Games"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Son of Urgoth",
+            "en": "Son of Urgoth"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "YW2mAg9w7Vw",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "ark-encounter",
+      "titulo": {
+        "es": "Ark Encounter",
+        "en": "Ark Encounter"
+      },
+      "portada_texto": [
+        {
+          "es": "Ark",
+          "en": "Ark"
+        },
+        {
+          "es": "Encounter",
+          "en": "Encounter"
+        }
+      ],
+      "anio": "2021",
+      "imagen_web": "img/036cf3_164ae5db46ac4e48935d3082ab246462.jpg",
+      "descripcion": {
+        "es": "Rigs de criatura de una llama y un canguro.",
+        "en": "Creature rigs for a llama and a kangaroo."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Ark Encounter",
+            "en": "Ark Encounter"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Llama · canguro",
+            "en": "Llama & Kangaroo, Creature Rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "P2fVPLn3rTg",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "dislyte",
+      "titulo": {
+        "es": "Dislyte: Ready to Awake",
+        "en": "Dislyte: Ready to Awake"
+      },
+      "portada_texto": [
+        {
+          "es": "Dislyte",
+          "en": "Dislyte"
+        },
+        {
+          "es": "Ready to Awake",
+          "en": "Ready to Awake"
+        }
+      ],
+      "anio": "2021",
+      "imagen_web": "img/036cf3_b806ef56640645b88b770fba50f7c971.jpg",
+      "descripcion": {
+        "es": "Rigs de múltiples personajes para Dislyte: Ready to Awake.",
+        "en": "Rigs for multiple characters in Dislyte: Ready to Awake."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "Dislyte",
+            "en": "Dislyte"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Múltiples personajes",
+            "en": "Multiple characters"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "F0hGORCEd9s",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "30-monedas",
+      "titulo": {
+        "es": "30 Monedas",
+        "en": "30 Coins"
+      },
+      "portada_texto": [
+        {
+          "es": "30",
+          "en": "30"
+        },
+        {
+          "es": "Monedas",
+          "en": "Coins"
+        }
+      ],
+      "anio": "2021",
+      "imagen_web": "img/036cf3_0ec4be564bb94b00953a2bacce5a040b.jpg",
+      "descripcion": {
+        "es": "Rig de Beast para la serie 30 Monedas.",
+        "en": "Rig for the Beast in the series 30 Coins."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "HBO",
+            "en": "HBO"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Beast",
+            "en": "Beast"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "8WO2GFnS6UU",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "my-universe",
+      "titulo": {
+        "es": "My Universe",
+        "en": "My Universe"
+      },
+      "portada_texto": [
+        {
+          "es": "My",
+          "en": "My"
+        },
+        {
+          "es": "Universe",
+          "en": "Universe"
+        }
+      ],
+      "anio": "2021",
+      "imagen_web": "img/036cf3_1c077fdc2d9f467aa19f77a7309d1dc1.jpg",
+      "descripcion": {
+        "es": "Rig de ojos para My Universe.",
+        "en": "Eye rig for My Universe."
+      },
+      "ficha": [
+        {
+          "campo": "cliente",
+          "valor": {
+            "es": "BTS & Coldplay",
+            "en": "BTS & Coldplay"
+          }
+        },
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "Illusorium",
+            "en": "Illusorium"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Eye rig",
+            "en": "Eye rig"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "3YqPKLZF_WU",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Videoclip",
+          "en": "Music video"
+        }
+      }
+    },
+    {
+      "id": "treasure-trekkers",
+      "titulo": {
+        "es": "Treasure Trekkers",
+        "en": "Treasure Trekkers"
+      },
+      "portada_texto": [
+        {
+          "es": "Treasure",
+          "en": "Treasure"
+        },
+        {
+          "es": "Trekkers",
+          "en": "Trekkers"
+        }
+      ],
+      "anio": "2021",
+      "imagen_web": "img/036cf3_ebe7641ef25c41639391e4a0b095bcb0.jpg",
+      "descripcion": {
+        "es": "Rig corporal y facial del mono y rigs de múltiples personajes, con AdvancedSkeleton.",
+        "en": "Body and facial rig for the monkey and rigs for multiple characters, built with AdvancedSkeleton."
+      },
+      "ficha": [
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "B-Water Animation Studios",
+            "en": "B-Water Animation Studios"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Mono · múltiples personajes",
+            "en": "Monkey · multiple characters"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "IOtM-InsCmA",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    },
+    {
+      "id": "diddl",
+      "titulo": {
+        "es": "Diddl",
+        "en": "Diddl"
+      },
+      "portada_texto": [
+        {
+          "es": "Diddl",
+          "en": "Diddl"
+        },
+        {
+          "es": "",
+          "en": ""
+        }
+      ],
+      "anio": "2020",
+      "imagen_web": "img/036cf3_6c1696523d4643899d9dc1fe80989238.jpg",
+      "descripcion": {
+        "es": "Rigs de múltiples personajes para Diddl en B-Water Animation Studios.",
+        "en": "Rigs for multiple characters for Diddl at B-Water Animation Studios."
+      },
+      "ficha": [
+        {
+          "campo": "estudio",
+          "valor": {
+            "es": "B-Water Animation Studios",
+            "en": "B-Water Animation Studios"
+          }
+        },
+        {
+          "campo": "rig",
+          "valor": {
+            "es": "Múltiples personajes",
+            "en": "Multiple characters"
+          }
+        }
+      ],
+      "video": {
+        "youtube": "I0tvjOpWpJ8",
+        "inicio": 0,
+        "etiqueta": {
+          "es": "Trailer",
+          "en": "Trailer"
+        }
+      }
+    }
+  ]
+}

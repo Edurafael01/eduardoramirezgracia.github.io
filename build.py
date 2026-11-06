@@ -26,153 +26,36 @@ def src(img):
 def L(es, en):
     return {"es": es, "en": en}
 
-# Proyectos, del más reciente al más antiguo. Diddl va el último.
-# f = ficha en orden Cliente, Estudio, Rig. video = (id de YouTube, segundo de inicio, etiqueta es, etiqueta en).
-PROYECTOS = [
-    dict(s="blacksad", t=L("Blacksad", "Blacksad"), t1="Blacksad", t2="Fan Animation", a="2026",
-         img="036cf3_47cc1c6251a0418faa9f6e503dd5d1a2~mv2.jpg",
-         d=L("Múltiples rigs para una animación fan de Blacksad.", "Multiple rigs for a Blacksad fan animation."),
-         f=[("estudio", "Illusorium"), ("rig", L("Múltiples rigs", "Multiple rigs"))],
-         video=("t3qnuVscDes", 0, "Vídeo", "Video")),
-    dict(s="totalenergies", t=L("TotalEnergies", "TotalEnergies"), t1="TotalEnergies", t2=L("Publicidad", "Commercial"), a="2026",
-         img="036cf3_2a972a8c4c0744e58cf43abc2b1551ee~mv2.jpg",
-         d=L("Rig del personaje principal de una pieza publicitaria para TotalEnergies.",
-             "Rig of the main character for a TotalEnergies commercial."),
-         f=[("cliente", "TotalEnergies"), ("estudio", "Miopia"), ("rig", L("Character rig", "Character Rig"))],
-         video=("6LG45b-x8TI", 0, "Anuncio", "Commercial")),
-    dict(s="el-fantasma-de-la-quinta", t=L("El Fantasma de la Quinta", "The Quinta's Ghost"), t1=L("El Fantasma", "The Quinta's"), t2=L("de la Quinta", "Ghost"), a="2025",
-         img="036cf3_4dc6122ad3f64b78bf977e5394cb2394~mv2.jpeg",
-         d=L("Rig corporal de Goya y rigs corporales y faciales de Saturno y del pájaro.",
-             "Body rig for Goya, and body and facial rigs for Saturn and the bird."),
-         f=[("cliente", "Illusorium & Martirio Films"), ("estudio", "Illusorium"),
-            ("rig", L("Goya · Saturno · pájaro", "Goya · Saturn · Bird"))],
-         video=("UC2GJT3PUS0", 0, "Trailer", "Trailer")),
-    dict(s="marathon-cinematic-trailer", t=L("Marathon · Cinematic Trailer", "Marathon · Cinematic Trailer"), t1="Marathon", t2="Cinematic Trailer", a="2025",
-         img="036cf3_ae6ea901d7984047b9acf65915a10507~mv2.jpg",
-         d=L("Rig de personaje de Man para el trailer cinemático de Marathon, dirigido por Alberto Mielgo.",
-             "Character rig for Man in the Marathon cinematic trailer, directed by Alberto Mielgo."),
-         f=[("cliente", "Bungie"), ("estudio", "Illusorium"), ("rig", L("Man · character rig", "Man, Character Rig"))],
-         video=("fvbEnWLRo1s", 101, "Trailer", "Trailer")),
-    dict(s="secret-level-pac-man", t=L("Secret Level · PAC-MAN", "Secret Level · PAC-MAN"), t1="Secret Level", t2="PAC-MAN", a="2024",
-         img="036cf3_a6c7a423f1394cb1ab3cd644ed6e6dec~mv2.jpg",
-         d=L("Rig de criatura de Beast para el episodio PAC-MAN de la serie antológica Secret Level.",
-             "Creature rig for the Beast in the PAC-MAN episode of the anthology series Secret Level."),
-         f=[("cliente", "Blur Studio · Amazon"), ("estudio", "Illusorium"),
-            ("rig", L("Beast · creature rig", "Beast, Creature Rig (simulation not included)"))],
-         video=("1hsuOFv5hRk", 0, "Trailer", "Trailer")),
-    dict(s="secret-level-spelunky", t=L("Secret Level · Spelunky", "Secret Level · Spelunky"), t1="Secret Level", t2="Spelunky", a="2024",
-         img="036cf3_95df628c1bf74ee6b5681fbf396b8cc2~mv2.jpg",
-         d=L("Rig de personaje de Young Girl y rig mecánico para el episodio Spelunky.",
-             "Character rig for the Young Girl and a mechanical rig for the Spelunky episode."),
-         f=[("cliente", "Blur Studio · Amazon"), ("estudio", "Illusorium"),
-            ("rig", L("Young Girl · rig mecánico", "Young Girl, Character Rig · Mechanical Rig"))],
-         video=("1hsuOFv5hRk", 0, "Trailer", "Trailer")),
-    dict(s="secret-level-mega-man", t=L("Secret Level · Mega Man", "Secret Level · Mega Man"), t1="Secret Level", t2="Mega Man", a="2024",
-         img="036cf3_f31ee0c1ead641fb85c59ea661e05eee~mv2.png",
-         d=L("Rigs corporales de Mega Man y Doctor Light, y rig de araña, para el episodio Mega Man.",
-             "Body rigs for Mega Man and Doctor Light, plus a spider rig, for the Mega Man episode."),
-         f=[("cliente", "Blur Studio · Amazon"), ("estudio", "Illusorium"),
-            ("rig", L("Mega Man · Doctor Light · araña", "Mega Man · Doctor Light · Spider"))],
-         video=("1hsuOFv5hRk", 0, "Trailer", "Trailer")),
-    dict(s="dungeon-fighter", t=L("Dungeon Fighter", "Dungeon Fighter"), t1="Dungeon", t2="Fighter", a="2023",
-         img="036cf3_dd67386ff4814f1e994085acaba9cf18~mv2.jpg",
-         d=L("Rigs de personaje de Shadow y Armour.", "Character rigs for Shadow and Armour."),
-         f=[("estudio", "Illusorium"), ("rig", L("Shadow · Armour", "Shadow & Armour, Character Rig"))],
-         video=None),
-    dict(s="sky-the-two-embers", t=L("Sky: The Two Embers", "Sky: The Two Embers"), t1="Sky", t2="The Two Embers", a="2023",
-         img="036cf3_e0c779c3e34245ac8d815bab85742039~mv2.jpg",
-         d=L("Rigs de múltiples personajes para Sky: The Two Embers.", "Rigs for multiple characters in Sky: The Two Embers."),
-         f=[("cliente", "That Game Company"), ("estudio", "Illusorium · Orchid"), ("rig", L("Múltiples rigs", "Multiple rigs"))],
-         video=("FWepS03YbFU", 0, "Trailer", "Trailer")),
-    dict(s="zeri-the-spark-of-zaun", t=L("Zeri: The Spark of Zaun", "Zeri: The Spark of Zaun"), t1="Zeri", t2="The Spark of Zaun", a="2022",
-         img="036cf3_08cbb93d717d4c8582eb321037d043f3~mv2.png",
-         d=L("Rig de Son of Urgoth para Zeri: The Spark of Zaun.", "Rig for the Son of Urgoth in Zeri: The Spark of Zaun."),
-         f=[("cliente", "Riot Games"), ("estudio", "Illusorium"), ("rig", "Son of Urgoth")],
-         video=("YW2mAg9w7Vw", 0, "Trailer", "Trailer")),
-    dict(s="ark-encounter", t=L("Ark Encounter", "Ark Encounter"), t1="Ark", t2="Encounter", a="2021",
-         img="036cf3_164ae5db46ac4e48935d3082ab246462~mv2.jpg",
-         d=L("Rigs de criatura de una llama y un canguro.", "Creature rigs for a llama and a kangaroo."),
-         f=[("cliente", "Ark Encounter"), ("estudio", "Illusorium"), ("rig", L("Llama · canguro", "Llama & Kangaroo, Creature Rig"))],
-         video=("P2fVPLn3rTg", 0, "Trailer", "Trailer")),
-    dict(s="dislyte", t=L("Dislyte: Ready to Awake", "Dislyte: Ready to Awake"), t1="Dislyte", t2="Ready to Awake", a="2021",
-         img="036cf3_b806ef56640645b88b770fba50f7c971~mv2.jpg",
-         d=L("Rigs de múltiples personajes para Dislyte: Ready to Awake.", "Rigs for multiple characters in Dislyte: Ready to Awake."),
-         f=[("cliente", "Dislyte"), ("estudio", "Illusorium"), ("rig", L("Múltiples personajes", "Multiple characters"))],
-         video=("F0hGORCEd9s", 0, "Trailer", "Trailer")),
-    dict(s="30-monedas", t=L("30 Monedas", "30 Coins"), t1="30", t2=L("Monedas", "Coins"), a="2021",
-         img="036cf3_0ec4be564bb94b00953a2bacce5a040b~mv2.jpg",
-         d=L("Rig de Beast para la serie 30 Monedas.", "Rig for the Beast in the series 30 Coins."),
-         f=[("cliente", "HBO"), ("estudio", "Illusorium"), ("rig", "Beast")],
-         video=("8WO2GFnS6UU", 0, "Trailer", "Trailer")),
-    dict(s="my-universe", t=L("My Universe", "My Universe"), t1="My", t2="Universe", a="2021",
-         img="036cf3_1c077fdc2d9f467aa19f77a7309d1dc1~mv2.jpg",
-         d=L("Rig de ojos para My Universe.", "Eye rig for My Universe."),
-         f=[("cliente", "BTS & Coldplay"), ("estudio", "Illusorium"), ("rig", "Eye rig")],
-         video=("3YqPKLZF_WU", 0, "Videoclip", "Music video")),
-    dict(s="treasure-trekkers", t=L("Treasure Trekkers", "Treasure Trekkers"), t1="Treasure", t2="Trekkers", a="2021",
-         img="036cf3_ebe7641ef25c41639391e4a0b095bcb0~mv2.jpg",
-         d=L("Rig corporal y facial del mono y rigs de múltiples personajes, con AdvancedSkeleton.",
-             "Body and facial rig for the monkey and rigs for multiple characters, built with AdvancedSkeleton."),
-         f=[("estudio", "B-Water Animation Studios"), ("rig", L("Mono · múltiples personajes", "Monkey · multiple characters"))],
-         video=("IOtM-InsCmA", 0, "Trailer", "Trailer")),
-    dict(s="diddl", t=L("Diddl", "Diddl"), t1="Diddl", t2="", a="2020",
-         img="036cf3_6c1696523d4643899d9dc1fe80989238~mv2.jpg",
-         d=L("Rigs de múltiples personajes para Diddl en B-Water Animation Studios.",
-             "Rigs for multiple characters for Diddl at B-Water Animation Studios."),
-         f=[("estudio", "B-Water Animation Studios"), ("rig", L("Múltiples personajes", "Multiple characters"))],
-         video=("I0tvjOpWpJ8", 0, "Trailer", "Trailer")),
-]
+# Datos: vienen del kit de marca (repositorio madrigs_kit, carpeta datos/), única fuente de verdad.
+# Se usa ../madrigs_kit/datos si existe (y se copia aquí); si no, la copia local datos/.
+import json, shutil
+KIT_DATOS = os.path.join(os.path.dirname(RAIZ), "madrigs_kit", "datos")
+DATOS = os.path.join(RAIZ, "datos")
+if os.path.isdir(KIT_DATOS):
+    os.makedirs(DATOS, exist_ok=True)
+    for f in ("perfil.json", "proyectos.json", "seminarios.json", "centros.json"):
+        shutil.copy(os.path.join(KIT_DATOS, f), os.path.join(DATOS, f))
 
-# Seminarios (contenido del dossier de seminarios, 30/10/2026)
-SEMINARIOS = [
-    dict(t1=L("Fundamentos", "Rigging"), t2=L("del Rigging", "Fundamentals"), dur="3 h", img="036cf3_7013a77583954fd3b14b3cfd0d9e8526~mv2.jpg",
-         titulo=L("Fundamentos del Rigging en Producción", "Rigging Fundamentals for Production"),
-         desc=L("Rig de props en Maya: jerarquías, constraints, control rig y pipeline.",
-                "Prop rigging in Maya: hierarchies, constraints, control rig and pipeline."),
-         lista=L(["Entiende la estructura jerárquica del rigging aplicado a producción",
-                  "Crea un rig funcional de prop con el flujo de trabajo de un estudio",
-                  "Aplica la nomenclatura y la organización de escena de un pipeline real"],
-                 ["Understand the hierarchical structure of production rigging",
-                  "Build a working prop rig following a studio workflow",
-                  "Apply the naming and scene organisation of a real pipeline"]),
-         datos=[("nivel", L("Básico", "Beginner")), ("software", "Autodesk Maya"), ("impartido", "CEU San Pablo")]),
-    dict(t1="Maya", t2="+ Unreal Engine", dur="3 h", img="036cf3_96946e13c4564668ac88b6eddca3f33a~mv2.jpg",
-         titulo=L("Rigging en Maya + Unreal Engine", "Rigging in Maya + Unreal Engine"),
-         desc=L("Rigging para videojuegos: exportación, IK Rig, Modular Rig y Control Rig.",
-                "Rigging for games: export, IK Rig, Modular Rig and Control Rig."),
-         lista=L(["Sabe qué viaja de Maya a Unreal Engine 5 y prepara esqueleto y geometría para exportar",
-                  "Trabaja dentro del motor con IK Rig, Modular Rig y Control Rig",
-                  "Comprende las restricciones técnicas del pipeline de videojuegos"],
-                 ["Know what travels from Maya to Unreal Engine 5 and prepare skeleton and geometry for export",
-                  "Work inside the engine with IK Rig, Modular Rig and Control Rig",
-                  "Understand the technical constraints of a game pipeline"]),
-         datos=[("nivel", L("Básico", "Beginner")), ("software", "Autodesk Maya · Unreal Engine 5"), ("impartido", "CEU San Pablo")]),
-    dict(t1=L("Automatización", "Rigging"), t2=L("de Rigging", "Automation"), dur="6 h", img="036cf3_d30c10bd89504689acc9b432f0bc4241~mv2.jpg",
-         titulo=L("Automatización de Rigging en Entornos Profesionales", "Rigging Automation in Professional Environments"),
-         desc=L("Rigging con AdvancedSkeleton: rig corporal y facial, herramientas y pipeline.",
-                "Rigging with AdvancedSkeleton: body and facial rig, tools and pipeline."),
-         lista=L(["Construye el rig corporal y facial de un personaje con AdvancedSkeleton",
-                  "Itera sobre el rig cuando el modelo cambia, sin rehacer el trabajo",
-                  "Muestra el rig en movimiento para su demoreel"],
-                 ["Build a character's body and facial rig with AdvancedSkeleton",
-                  "Iterate on the rig when the model changes, without redoing the work",
-                  "Show the rig in motion for their demo reel"]),
-         datos=[("nivel", L("Inicial-intermedio", "Beginner to intermediate")), ("software", "Autodesk Maya · AdvancedSkeleton"),
-                ("impartido", L("CEU San Pablo · UNIR (laboratorio online)", "CEU San Pablo · UNIR (online lab)"))]),
-    dict(t1=L("Criaturas", "Quadruped"), t2=L("Cuadrúpedas", "Creatures"), dur="3 h · 6 h", img=None,
-         titulo=L("Rigging de Criaturas Cuadrúpedas", "Quadruped Creature Rigging"),
-         desc=L("Laboratorio práctico: el alumnado construye desde cero el rig de un caballo, del esqueleto a los controles de animación.",
-                "Hands-on lab: students build a horse rig from scratch, from the skeleton to the animation controls."),
-         lista=L(["3 h: patas con control del corvejón y del casco, columna, cuello y cabeza",
-                  "6 h: todo lo anterior, más criaturas aladas, skinning, cola y rig facial sobre el rig de referencia"],
-                 ["3 h: legs with hock and hoof control, spine, neck and head",
-                  "6 h: all of the above, plus winged creatures, skinning, tail and facial rig on the reference rig"]),
-         datos=[("nivel", L("Intermedio", "Intermediate")), ("software", "Autodesk Maya"), ("impartido", L("Novedad 2027", "New in 2027"))]),
-]
+def _cargar(nombre):
+    with open(os.path.join(DATOS, nombre), encoding="utf-8") as fh:
+        return json.load(fh)
 
-# (nombre, archivo del logo en docs/img/logos/ sin extensión, o None para mostrar el nombre en texto). Universidades primero.
-CENTROS = [("CEU San Pablo", "ceu"), ("UNIR", "unir"), ("UFV", "ufv"), ("ECAM", "ecam"), ("Lightbox Academy", "lightbox"),
-           ("CICE", "cice"), ("Trazos", "trazos"), ("Animworkshop", "animworkshop"), ("Movie School", None)]
+def _img(ruta):
+    return ruta  # en los datos ya viene como img/...
+
+PERFIL = _cargar("perfil.json")
+PROYECTOS = [dict(s=p["id"], t=p["titulo"], t1=p["portada_texto"][0], t2=p["portada_texto"][1], a=p["anio"],
+                  img=p["imagen_web"], d=p["descripcion"], f=[(x["campo"], x["valor"]) for x in p["ficha"]],
+                  video=(None if not p["video"] else (p["video"]["youtube"], p["video"]["inicio"],
+                                                       p["video"]["etiqueta"]["es"], p["video"]["etiqueta"]["en"])))
+             for p in _cargar("proyectos.json")["proyectos"]]
+SEMINARIOS = [dict(t1=x["portada_texto"][0], t2=x["portada_texto"][1], dur=x["duracion"], img=x["imagen_web"],
+                   titulo=x["titulo"], desc=x["descripcion"], lista=x["resultados"],
+                   datos=[(y["campo"], y["valor"]) for y in x["ficha"]])
+              for x in _cargar("seminarios.json")["seminarios"]]
+# (nombre, archivo del logo sin extensión o None)
+CENTROS = [(c["nombre"], (os.path.splitext(os.path.basename(c["logo"]))[0] if c["logo"] else None))
+           for c in _cargar("centros.json")["centros"]]
 
 # Textos de la interfaz
 T = {
@@ -182,7 +65,7 @@ T = {
  "proyecto": L("Proyecto", "Project"), "seminario": L("Seminario", "Seminar"),
  "todos": L("← Todos los proyectos", "← All projects"), "ver_yt": L("Ver en YouTube", "Watch on YouTube"),
  "escribeme": L("Escríbeme", "Email me"),
- "cargo": L("Rigging Artist · Technical Director", "Rigging Artist · Technical Director"),
+ "cargo": PERFIL["cargo"],
 }
 
 e = html.escape

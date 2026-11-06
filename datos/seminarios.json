@@ -1,0 +1,231 @@
+{
+  "_nota": "Catálogo de seminarios publicado (fuente: dossier de seminarios del 30/10/2026). 'impartido' solo con centros donde ya se ha impartido.",
+  "seminarios": [
+    {
+      "titulo": {
+        "es": "Fundamentos del Rigging en Producción",
+        "en": "Rigging Fundamentals for Production"
+      },
+      "portada_texto": [
+        {
+          "es": "Fundamentos",
+          "en": "Rigging"
+        },
+        {
+          "es": "del Rigging",
+          "en": "Fundamentals"
+        }
+      ],
+      "duracion": "3 h",
+      "imagen_web": "img/036cf3_7013a77583954fd3b14b3cfd0d9e8526.jpg",
+      "descripcion": {
+        "es": "Rig de props en Maya: jerarquías, constraints, control rig y pipeline.",
+        "en": "Prop rigging in Maya: hierarchies, constraints, control rig and pipeline."
+      },
+      "resultados": {
+        "es": [
+          "Entiende la estructura jerárquica del rigging aplicado a producción",
+          "Crea un rig funcional de prop con el flujo de trabajo de un estudio",
+          "Aplica la nomenclatura y la organización de escena de un pipeline real"
+        ],
+        "en": [
+          "Understand the hierarchical structure of production rigging",
+          "Build a working prop rig following a studio workflow",
+          "Apply the naming and scene organisation of a real pipeline"
+        ]
+      },
+      "ficha": [
+        {
+          "campo": "nivel",
+          "valor": {
+            "es": "Básico",
+            "en": "Beginner"
+          }
+        },
+        {
+          "campo": "software",
+          "valor": {
+            "es": "Autodesk Maya",
+            "en": "Autodesk Maya"
+          }
+        },
+        {
+          "campo": "impartido",
+          "valor": {
+            "es": "CEU San Pablo",
+            "en": "CEU San Pablo"
+          }
+        }
+      ]
+    },
+    {
+      "titulo": {
+        "es": "Rigging en Maya + Unreal Engine",
+        "en": "Rigging in Maya + Unreal Engine"
+      },
+      "portada_texto": [
+        {
+          "es": "Maya",
+          "en": "Maya"
+        },
+        {
+          "es": "+ Unreal Engine",
+          "en": "+ Unreal Engine"
+        }
+      ],
+      "duracion": "3 h",
+      "imagen_web": "img/036cf3_96946e13c4564668ac88b6eddca3f33a.jpg",
+      "descripcion": {
+        "es": "Rigging para videojuegos: exportación, IK Rig, Modular Rig y Control Rig.",
+        "en": "Rigging for games: export, IK Rig, Modular Rig and Control Rig."
+      },
+      "resultados": {
+        "es": [
+          "Sabe qué viaja de Maya a Unreal Engine 5 y prepara esqueleto y geometría para exportar",
+          "Trabaja dentro del motor con IK Rig, Modular Rig y Control Rig",
+          "Comprende las restricciones técnicas del pipeline de videojuegos"
+        ],
+        "en": [
+          "Know what travels from Maya to Unreal Engine 5 and prepare skeleton and geometry for export",
+          "Work inside the engine with IK Rig, Modular Rig and Control Rig",
+          "Understand the technical constraints of a game pipeline"
+        ]
+      },
+      "ficha": [
+        {
+          "campo": "nivel",
+          "valor": {
+            "es": "Básico",
+            "en": "Beginner"
+          }
+        },
+        {
+          "campo": "software",
+          "valor": {
+            "es": "Autodesk Maya · Unreal Engine 5",
+            "en": "Autodesk Maya · Unreal Engine 5"
+          }
+        },
+        {
+          "campo": "impartido",
+          "valor": {
+            "es": "CEU San Pablo",
+            "en": "CEU San Pablo"
+          }
+        }
+      ]
+    },
+    {
+      "titulo": {
+        "es": "Automatización de Rigging en Entornos Profesionales",
+        "en": "Rigging Automation in Professional Environments"
+      },
+      "portada_texto": [
+        {
+          "es": "Automatización",
+          "en": "Rigging"
+        },
+        {
+          "es": "de Rigging",
+          "en": "Automation"
+        }
+      ],
+      "duracion": "6 h",
+      "imagen_web": "img/036cf3_d30c10bd89504689acc9b432f0bc4241.jpg",
+      "descripcion": {
+        "es": "Rigging con AdvancedSkeleton: rig corporal y facial, herramientas y pipeline.",
+        "en": "Rigging with AdvancedSkeleton: body and facial rig, tools and pipeline."
+      },
+      "resultados": {
+        "es": [
+          "Construye el rig corporal y facial de un personaje con AdvancedSkeleton",
+          "Itera sobre el rig cuando el modelo cambia, sin rehacer el trabajo",
+          "Muestra el rig en movimiento para su demoreel"
+        ],
+        "en": [
+          "Build a character's body and facial rig with AdvancedSkeleton",
+          "Iterate on the rig when the model changes, without redoing the work",
+          "Show the rig in motion for their demo reel"
+        ]
+      },
+      "ficha": [
+        {
+          "campo": "nivel",
+          "valor": {
+            "es": "Inicial-intermedio",
+            "en": "Beginner to intermediate"
+          }
+        },
+        {
+          "campo": "software",
+          "valor": {
+            "es": "Autodesk Maya · AdvancedSkeleton",
+            "en": "Autodesk Maya · AdvancedSkeleton"
+          }
+        },
+        {
+          "campo": "impartido",
+          "valor": {
+            "es": "CEU San Pablo · UNIR (laboratorio online)",
+            "en": "CEU San Pablo · UNIR (online lab)"
+          }
+        }
+      ]
+    },
+    {
+      "titulo": {
+        "es": "Rigging de Criaturas Cuadrúpedas",
+        "en": "Quadruped Creature Rigging"
+      },
+      "portada_texto": [
+        {
+          "es": "Criaturas",
+          "en": "Quadruped"
+        },
+        {
+          "es": "Cuadrúpedas",
+          "en": "Creatures"
+        }
+      ],
+      "duracion": "3 h · 6 h",
+      "imagen_web": null,
+      "descripcion": {
+        "es": "Laboratorio práctico: el alumnado construye desde cero el rig de un caballo, del esqueleto a los controles de animación.",
+        "en": "Hands-on lab: students build a horse rig from scratch, from the skeleton to the animation controls."
+      },
+      "resultados": {
+        "es": [
+          "3 h: patas con control del corvejón y del casco, columna, cuello y cabeza",
+          "6 h: todo lo anterior, más criaturas aladas, skinning, cola y rig facial sobre el rig de referencia"
+        ],
+        "en": [
+          "3 h: legs with hock and hoof control, spine, neck and head",
+          "6 h: all of the above, plus winged creatures, skinning, tail and facial rig on the reference rig"
+        ]
+      },
+      "ficha": [
+        {
+          "campo": "nivel",
+          "valor": {
+            "es": "Intermedio",
+            "en": "Intermediate"
+          }
+        },
+        {
+          "campo": "software",
+          "valor": {
+            "es": "Autodesk Maya",
+            "en": "Autodesk Maya"
+          }
+        },
+        {
+          "campo": "impartido",
+          "valor": {
+            "es": "Novedad 2027",
+            "en": "New in 2027"
+          }
+        }
+      ]
+    }
+  ]
+}

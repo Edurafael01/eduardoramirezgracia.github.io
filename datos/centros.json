@@ -1,0 +1,60 @@
+{
+  "_nota": "Centros donde Edu YA ha impartido formación, en el orden de la web (universidades primero). Los previstos van en 'previstos' y no se publican hasta que se imparta.",
+  "centros": [
+    {
+      "nombre": "CEU San Pablo",
+      "logo": "img/logos/ceu.png",
+      "tipo": "universidad"
+    },
+    {
+      "nombre": "UNIR",
+      "logo": "img/logos/unir.png",
+      "tipo": "universidad"
+    },
+    {
+      "nombre": "UFV",
+      "logo": "img/logos/ufv.png",
+      "tipo": "universidad"
+    },
+    {
+      "nombre": "ECAM",
+      "logo": "img/logos/ecam.png",
+      "tipo": "escuela"
+    },
+    {
+      "nombre": "Lightbox Academy",
+      "logo": "img/logos/lightbox.png",
+      "tipo": "escuela"
+    },
+    {
+      "nombre": "CICE",
+      "logo": "img/logos/cice.png",
+      "tipo": "escuela"
+    },
+    {
+      "nombre": "Trazos",
+      "logo": "img/logos/trazos.png",
+      "tipo": "escuela"
+    },
+    {
+      "nombre": "Animworkshop",
+      "logo": "img/logos/animworkshop.png",
+      "tipo": "escuela"
+    },
+    {
+      "nombre": "Movie School",
+      "logo": null,
+      "tipo": "escuela"
+    }
+  ],
+  "previstos": [
+    {
+      "nombre": "Universidad Europea",
+      "desde": "enero de 2027"
+    },
+    {
+      "nombre": "CocoSchool",
+      "desde": "primavera de 2027"
+    }
+  ]
+}

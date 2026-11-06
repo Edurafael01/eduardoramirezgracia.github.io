@@ -1,0 +1,29 @@
+{
+  "nombre": "Eduardo Ramírez Gracia",
+  "marca": "madrigs",
+  "cargo": {
+    "es": "Rigging Artist · Technical Director · Docente",
+    "en": "Rigging Artist · Technical Director · Educator"
+  },
+  "ciudad": "Madrid",
+  "email": "eduardoramirezgracia@gmail.com",
+  "web": "https://eduardoramirezgracia.com",
+  "linkedin": "https://www.linkedin.com/in/eduardoramirezgracia",
+  "instagram": "https://www.instagram.com/edu_madrigs",
+  "demoreel": {
+    "youtube": "hT5Q2sQDEmU",
+    "imagen_web": "img/036cf3_a8b0a880144844d78cb128b8602cf3df.jpg"
+  },
+  "retrato_web": "img/retrato.jpg",
+  "creditos_destacados": {
+    "es": "Secret Level (Blur Studio · Amazon) y el tráiler cinemático de Marathon",
+    "en": "Secret Level (Blur Studio · Amazon) and the Marathon cinematic trailer"
+  },
+  "dossier_web": "dossier-seminarios-rigging.pdf",
+  "sesion_unir": {
+    "youtube": "tzMgbhzYOzA",
+    "titulo": "Rigging artist ante la IA: así se crean los personajes 3D",
+    "fecha": "2026-10-27",
+    "permiso": "Autorizado por escrito por UNIR el 02/11/2026"
+  }
+}
