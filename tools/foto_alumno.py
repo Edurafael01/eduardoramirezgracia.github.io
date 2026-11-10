@@ -12,7 +12,7 @@ if im.width / im.height > 4 / 5:
 else:
     w, h = im.width, round(im.width * 5 / 4)
 x, y = (im.width - w) // 2, max(0, (im.height - h) // 3)
-if im.width < 800:
+if w < 800:
     print("aviso: la foto tiene menos de 800 px de ancho; se verá blanda en pantallas grandes")
 im = im.crop((x, y, x + w, y + h)).resize((800, 1000), Image.LANCZOS)
 destino = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "img", "alumnos", ident + ".jpg")

@@ -33,6 +33,21 @@
       "publicar": true
     },
     {
+      "id": "fernando-usabiaga",
+      "nombre": "Fernando Usabiaga",
+      "foto": "img/alumnos/fernando-usabiaga.jpg",
+      "reel": "https://www.youtube.com/watch?v=H7O9FLA9lTY",
+      "linkedin": "https://www.linkedin.com/in/fernando-usabiaga-bustos-a7b28a104/",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "2026-11-10 · confirmado a Edu; foto de su canal de YouTube",
+      "publicar": true
+    },
+    {
       "id": "javier-hernandez",
       "nombre": "Javier Hernández",
       "foto": "img/alumnos/javier-hernandez.jpg",
