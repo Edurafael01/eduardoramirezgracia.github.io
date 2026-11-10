@@ -6,31 +6,31 @@
       "id": "giuseppe-cantali",
       "nombre": "Giuseppe Cantali",
       "foto": "img/alumnos/giuseppe-cantali.jpg",
-      "reel": "",
-      "linkedin": "",
+      "reel": "https://vimeo.com/1176739321",
+      "linkedin": "https://www.linkedin.com/in/giuseppecantali/",
       "rol": {
         "es": "",
         "en": ""
       },
       "centro": "",
       "anio": "",
-      "permiso": "",
-      "publicar": false
+      "permiso": "2026-11-10 · confirmado a Edu (medio por anotar)",
+      "publicar": true
     },
     {
       "id": "miriam-jimenez-herrera",
       "nombre": "Miriam Jiménez Herrera",
       "foto": "img/alumnos/miriam-jimenez-herrera.jpg",
-      "reel": "",
-      "linkedin": "",
+      "reel": "https://vimeo.com/1097839850",
+      "linkedin": "https://www.linkedin.com/in/miriam-jim%C3%A9nez-herrera/",
       "rol": {
         "es": "",
         "en": ""
       },
       "centro": "",
       "anio": "",
-      "permiso": "",
-      "publicar": false
+      "permiso": "2026-11-10 · confirmado a Edu (medio por anotar)",
+      "publicar": true
     },
     {
       "id": "javier-hernandez",
