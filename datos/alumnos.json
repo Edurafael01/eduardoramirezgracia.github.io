@@ -51,16 +51,16 @@
       "id": "javier-hernandez",
       "nombre": "Javier Hernández",
       "foto": "img/alumnos/javier-hernandez.jpg",
-      "reel": "",
-      "linkedin": "",
+      "reel": "https://www.linkedin.com/feed/update/urn:li:activity:7432735572777070592/",
+      "linkedin": "https://www.linkedin.com/in/javier-hernandez-2b55521ba/",
       "rol": {
         "es": "",
         "en": ""
       },
       "centro": "",
       "anio": "",
-      "permiso": "",
-      "publicar": false
+      "permiso": "2026-11-10 · confirmado a Edu; foto de su perfil de LinkedIn",
+      "publicar": true
     },
     {
       "id": "jose-antonio-tomas-naranjo",
