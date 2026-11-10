@@ -157,3 +157,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--dim);fon
 @media (max-width:1180px){.flecha{position:static;margin:0}.carrusel{display:grid;grid-template-columns:1fr 1fr;gap:20px}.pista{grid-column:1/-1;grid-row:1}.flecha.prev{grid-row:2;justify-self:end}.flecha.next{grid-row:2;justify-self:start}}
 @media (max-width:1000px){.pista{grid-auto-columns:calc((100% - 24px)/2)}}
 @media (max-width:760px){.pista{grid-auto-columns:82%;gap:16px}.alumno{padding:22px}.alumno h3{font-size:30px}.alumno .enlaces{flex-wrap:nowrap;gap:8px}.alumno .btn{padding:10px 14px;font-size:12px;letter-spacing:.14em}}
+.alumno.vacio{background:linear-gradient(to bottom,#1d1b17,#0f0e0c)}
+.alumno.vacio::after{display:none}
+.alumno .silueta{position:absolute;left:15%;top:10%;width:70%;height:auto;fill:none;stroke:rgba(201,152,42,.35);stroke-width:3;z-index:0}
+.alumno.vacio h3{color:var(--dim)}

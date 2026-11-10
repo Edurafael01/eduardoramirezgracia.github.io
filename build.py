@@ -74,6 +74,7 @@ def _alumnos():
         lista.append(a)
     return lista
 ALUMNOS = _alumnos()
+HUECOS_ALUMNOS = _cargar("alumnos.json").get("huecos", 0) if os.path.exists(os.path.join(DATOS, "alumnos.json")) else 0
 
 # Textos de la interfaz
 T = {
@@ -339,8 +340,9 @@ def sesion(lang):
 </div></section>"""
 
 def alumnos(lang):
-    if not ALUMNOS:
-        return ""  # la sección no aparece hasta que haya al menos un perfil publicado
+    huecos = max(0, HUECOS_ALUMNOS - len(ALUMNOS))
+    if not ALUMNOS and not huecos:
+        return ""  # la sección no aparece hasta que haya perfiles publicados o huecos
     es = lang == "es"
     def tarjeta(a):
         rol = f'<p class="rol">{e(a["rol"][lang])}</p>' if a.get("rol", {}).get(lang) else ""
@@ -354,7 +356,11 @@ def alumnos(lang):
 {rol}{donde}
 <div class="enlaces"><a class="btn primario" href="{e(a["reel"])}" target="_blank" rel="noopener" aria-label="{"Ver el reel de" if es else "Watch the reel by"} {e(a["nombre"])}">{"Ver reel" if es else "Watch reel"}</a>{li}</div>
 </li>"""
-    tarjetas = "\n".join(tarjeta(a) for a in ALUMNOS)
+    hueco = f"""<li class="alumno vacio">
+<svg class="silueta" viewBox="0 0 200 250" aria-hidden="true"><circle cx="100" cy="88" r="42"></circle><path d="M24 250c0-52 34-86 76-86s76 34 76 86"></path></svg>
+<h3>{"[Sin nombre]" if es else "[No name]"}</h3>
+</li>"""
+    tarjetas = "\n".join([tarjeta(a) for a in ALUMNOS] + [hueco] * huecos)
     return f"""<section id="alumnos"><div class="wrap">
 <div class="cab"><p class="eyebrow">{"Antiguos alumnos" if es else "Former students"}</p><h2>{"Su trabajo,<br><span>después del aula.</span>" if es else "Their work,<br><span>after class.</span>"}</h2></div>
 <div class="carrusel" data-carrusel>

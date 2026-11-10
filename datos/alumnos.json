@@ -1,5 +1,6 @@
 {
-  "_nota": "Antiguos alumnos para la página de Docencia (carrusel). Solo salen en la web los que tienen publicar=true, y para eso hacen falta: foto en la web (docs/img/alumnos/<id>.jpg, cuadrada), reel, y permiso (fecha y medio por el que el alumno autorizó usar su nombre, foto y reel). rol (qué hace ahora), centro (donde fue alumno, tiene que estar en centros.json), anio y linkedin son opcionales. El orden de la lista es el orden del carrusel.",
+  "_nota": "Antiguos alumnos para la página de Docencia (carrusel). Solo salen en la web los que tienen publicar=true, y para eso hacen falta: foto en la web (docs/img/alumnos/<id>.jpg, cuadrada), reel, y permiso (fecha y medio por el que el alumno autorizó usar su nombre, foto y reel). rol (qué hace ahora), centro (donde fue alumno, tiene que estar en centros.json), anio y linkedin son opcionales. El orden de la lista es el orden del carrusel. 'huecos': número mínimo de tarjetas del carrusel; si hay menos perfiles publicados, se rellenan con tarjetas '[Sin nombre]'. Poner 0 para quitarlas.",
+  "huecos": 4,
   "alumnos": [
     {
       "id": "giuseppe-cantali",
