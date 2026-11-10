@@ -1,0 +1,65 @@
+{
+  "_nota": "Antiguos alumnos para la página de Docencia (carrusel). Solo salen en la web los que tienen publicar=true, y para eso hacen falta: foto en la web (docs/img/alumnos/<id>.jpg, cuadrada), reel, y permiso (fecha y medio por el que el alumno autorizó usar su nombre, foto y reel). rol (qué hace ahora), centro (donde fue alumno, tiene que estar en centros.json), anio y linkedin son opcionales. El orden de la lista es el orden del carrusel.",
+  "alumnos": [
+    {
+      "id": "giuseppe-cantali",
+      "nombre": "Giuseppe Cantali",
+      "foto": "img/alumnos/giuseppe-cantali.jpg",
+      "reel": "",
+      "linkedin": "",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "",
+      "publicar": false
+    },
+    {
+      "id": "miriam-jimenez-herrera",
+      "nombre": "Miriam Jiménez Herrera",
+      "foto": "img/alumnos/miriam-jimenez-herrera.jpg",
+      "reel": "",
+      "linkedin": "",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "",
+      "publicar": false
+    },
+    {
+      "id": "javier-hernandez",
+      "nombre": "Javier Hernández",
+      "foto": "img/alumnos/javier-hernandez.jpg",
+      "reel": "",
+      "linkedin": "",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "",
+      "publicar": false
+    },
+    {
+      "id": "jose-antonio-tomas-naranjo",
+      "nombre": "José Antonio Tomás Naranjo",
+      "foto": "img/alumnos/jose-antonio-tomas-naranjo.jpg",
+      "reel": "",
+      "linkedin": "",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "",
+      "publicar": false
+    }
+  ]
+}

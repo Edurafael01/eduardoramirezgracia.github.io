@@ -33,7 +33,7 @@ KIT_DATOS = os.path.join(os.path.dirname(RAIZ), "madrigs_kit", "datos")
 DATOS = os.path.join(RAIZ, "datos")
 if os.path.isdir(KIT_DATOS):
     os.makedirs(DATOS, exist_ok=True)
-    for f in ("perfil.json", "proyectos.json", "seminarios.json", "centros.json"):
+    for f in ("perfil.json", "proyectos.json", "seminarios.json", "centros.json", "alumnos.json"):
         shutil.copy(os.path.join(KIT_DATOS, f), os.path.join(DATOS, f))
 
 def _cargar(nombre):
@@ -56,6 +56,24 @@ SEMINARIOS = [dict(t1=x["portada_texto"][0], t2=x["portada_texto"][1], dur=x["du
 # (nombre, archivo del logo sin extensión o None)
 CENTROS = [(c["nombre"], (os.path.splitext(os.path.basename(c["logo"]))[0] if c["logo"] else None))
            for c in _cargar("centros.json")["centros"]]
+
+# Antiguos alumnos (carrusel de Docencia). Solo los marcados para publicar y con todo lo necesario.
+def _alumnos():
+    nombres_centros = {n for n, _ in CENTROS}
+    lista = []
+    for a in _cargar("alumnos.json")["alumnos"] if os.path.exists(os.path.join(DATOS, "alumnos.json")) else []:
+        if not a.get("publicar"):
+            continue
+        faltan = [c for c in ("nombre", "foto", "reel", "permiso") if not a.get(c)]
+        if faltan:
+            raise SystemExit(f"alumnos.json · {a['id']}: para publicar faltan {', '.join(faltan)}")
+        if not os.path.exists(os.path.join(OUT, a["foto"])):
+            raise SystemExit(f"alumnos.json · {a['id']}: no existe docs/{a['foto']} (usa tools/foto_alumno.py)")
+        if a.get("centro") and a["centro"] not in nombres_centros:
+            raise SystemExit(f"alumnos.json · {a['id']}: el centro «{a['centro']}» no está en centros.json")
+        lista.append(a)
+    return lista
+ALUMNOS = _alumnos()
 
 # Textos de la interfaz
 T = {
@@ -320,6 +338,52 @@ def sesion(lang):
 <p class="yt">{e(pie_)} · <a href="https://www.youtube.com/watch?v={SESION_YT}" target="_blank" rel="noopener">{T["ver_yt"][lang]}</a></p>
 </div></section>"""
 
+def alumnos(lang):
+    if not ALUMNOS:
+        return ""  # la sección no aparece hasta que haya al menos un perfil publicado
+    es = lang == "es"
+    def tarjeta(a):
+        rol = f'<p class="rol">{e(a["rol"][lang])}</p>' if a.get("rol", {}).get(lang) else ""
+        donde = " · ".join(x for x in (a.get("centro"), a.get("anio")) if x)
+        donde = f'<p class="donde">{"Formación en" if es else "Trained at"} {e(donde)}</p>' if donde else ""
+        li = (f'<a class="btn" href="{e(a["linkedin"])}" target="_blank" rel="noopener" '
+              f'aria-label="LinkedIn · {e(a["nombre"])}">LinkedIn</a>') if a.get("linkedin") else ""
+        return f"""<li class="alumno">
+<img class="foto" src="{pre(lang)}{a["foto"]}" alt="{e(a["nombre"])}" width="160" height="160" loading="lazy">
+<h3>{e(a["nombre"])}</h3>
+{rol}{donde}
+<div class="enlaces"><a class="btn primario" href="{e(a["reel"])}" target="_blank" rel="noopener" aria-label="{"Ver el reel de" if es else "Watch the reel by"} {e(a["nombre"])}">{"Ver reel" if es else "Watch reel"}</a>{li}</div>
+</li>"""
+    tarjetas = "\n".join(tarjeta(a) for a in ALUMNOS)
+    return f"""<section id="alumnos"><div class="wrap">
+<div class="cab"><p class="eyebrow">{"Antiguos alumnos" if es else "Former students"}</p><h2>{"Su trabajo,<br><span>después del aula.</span>" if es else "Their work,<br><span>after class.</span>"}</h2></div>
+<div class="carrusel" data-carrusel>
+<button class="flecha prev" type="button" aria-label="{"Anterior" if es else "Previous"}">&#8249;</button>
+<ul class="pista" tabindex="0" aria-label="{"Reels de antiguos alumnos" if es else "Former students' reels"}">
+{tarjetas}
+</ul>
+<button class="flecha next" type="button" aria-label="{"Siguiente" if es else "Next"}">&#8250;</button>
+</div>
+</div></section>
+<script>
+/* Carrusel de alumnos: las flechas avanzan una tarjeta; al llegar al final vuelve al primero (y al revés). */
+document.querySelectorAll("[data-carrusel]").forEach(function (c) {{
+  var p = c.querySelector(".pista");
+  var suave = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  function paso() {{ return p.querySelector(".alumno").getBoundingClientRect().width + parseFloat(getComputedStyle(p).columnGap || 0); }}
+  function revisar() {{ c.classList.toggle("quieto", p.scrollWidth <= p.clientWidth + 4); }}
+  c.querySelector(".next").addEventListener("click", function () {{
+    var fin = p.scrollLeft + p.clientWidth >= p.scrollWidth - 4;
+    p.scrollTo({{ left: fin ? 0 : p.scrollLeft + paso(), behavior: suave }});
+  }});
+  c.querySelector(".prev").addEventListener("click", function () {{
+    var ini = p.scrollLeft <= 4;
+    p.scrollTo({{ left: ini ? p.scrollWidth : p.scrollLeft - paso(), behavior: suave }});
+  }});
+  addEventListener("resize", revisar); revisar();
+}});
+</script>"""
+
 def docencia(lang):
     es = lang == "es"
     cards = "\n".join(tarjeta_seminario(lang, s) for s in SEMINARIOS)
@@ -355,6 +419,8 @@ def docencia(lang):
 </div></div></section>
 
 {sesion(lang)}
+
+{alumnos(lang)}
 
 {como_trabajo(lang)}
 
