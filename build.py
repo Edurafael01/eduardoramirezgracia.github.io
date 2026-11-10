@@ -349,7 +349,7 @@ def alumnos(lang):
         li = (f'<a class="btn" href="{e(a["linkedin"])}" target="_blank" rel="noopener" '
               f'aria-label="LinkedIn · {e(a["nombre"])}">LinkedIn</a>') if a.get("linkedin") else ""
         return f"""<li class="alumno">
-<img class="foto" src="{pre(lang)}{a["foto"]}" alt="{e(a["nombre"])}" width="160" height="160" loading="lazy">
+<img class="foto" src="{pre(lang)}{a["foto"]}" alt="{e(a["nombre"])}" width="800" height="1000" loading="lazy">
 <h3>{e(a["nombre"])}</h3>
 {rol}{donde}
 <div class="enlaces"><a class="btn primario" href="{e(a["reel"])}" target="_blank" rel="noopener" aria-label="{"Ver el reel de" if es else "Watch the reel by"} {e(a["nombre"])}">{"Ver reel" if es else "Watch reel"}</a>{li}</div>
