@@ -441,6 +441,79 @@ def docencia(lang):
 {contacto(lang, *(("Seminarios", "para tu centro.") if es else ("Seminars", "for your school.")), texto_contacto, "Seminarios de rigging" if es else "Rigging seminars", cuerpo, btn_dossier)}
 
 <div class="wrap puente"><p>{"¿Eres un <span>estudio?</span>" if es else "Are you a <span>studio?</span>"}</p><a class="btn" href="index.html">{"Ver proyectos" if es else "See projects"}</a></div>
+<div class="wrap puente"><p>{"¿Estudias animación <span>o VFX?</span>" if es else "Studying animation <span>or VFX?</span>"}</p><a class="btn" href="mentorias.html">{"Mentorías" if es else "Mentoring"}</a></div>
+</main>
+{pie(lang)}"""
+
+def mentorias(lang):
+    """Página para estudiantes de otras escuelas: clases particulares y en grupo. Sin precios: presupuesto por correo."""
+    es = lang == "es"
+    titulo = ("Mentorías de rigging para estudiantes · " if es else "Rigging mentoring for students · ") + NOMBRE
+    desc = ("Clases particulares y en grupo con un Rigging Artist en activo: revisión de reel y dudas de rigging para estudiantes de animación y VFX." if es else
+            "One-to-one and group sessions with a working Rigging Artist: reel reviews and rigging questions for animation and VFX students.")
+    h1 = "¿Estudias para animación o VFX?<br><span>Revisamos tu reel.</span>" if es else "Studying animation or VFX?<br><span>Let's review your reel.</span>"
+    eyebrow = "Mentorías · Para estudiantes" if es else "Mentoring · For students"
+    lead = ("Si te estás formando en animación o VFX y quieres la mirada de un rigger que trabaja en producción, te ayudo con tu reel y con tus dudas de rigging. Cuéntame tu caso y te preparo un presupuesto." if es else
+            "If you're training in animation or VFX and want feedback from a rigger working in production, I can help with your reel and your rigging questions. Tell me about your case and I'll send you a quote.")
+    asunto = "Mentoría de rigging" if es else "Rigging mentoring"
+    cuerpo = ("Qué estudias y dónde:\nEn qué te gustaría que te ayudara:\nEnlace a tu reel (si lo tienes):\nClase particular o en grupo (¿cuántas personas?):\nDisponibilidad:\n" if es else
+              "What and where you're studying:\nWhat you'd like help with:\nLink to your reel (if you have one):\nOne-to-one or group (how many people?):\nAvailability:\n")
+    botones = (f'<a class="btn primario" href="{mailto(asunto, cuerpo)}">{"Pide tu presupuesto" if es else "Ask for a quote"}</a>'
+               f'<a class="btn" href="index.html">{"Ver mis proyectos" if es else "See my projects"}</a>')
+    temas = [
+        (L("Tu demo reel", "Your demo reel"),
+         L("Lo vemos juntos: qué funciona, qué sobra y qué le falta antes de enviarlo a estudios.",
+           "We go through it together: what works, what to cut and what's missing before you send it to studios.")),
+        (L("Dudas de rigging", "Rigging questions"),
+         L("Problemas de tu rig o de tu proyecto de curso en Maya: skinning, controles, jerarquías, autorigs.",
+           "Issues with your rig or your course project in Maya: skinning, controls, hierarchies, autorigs.")),
+        (L("Tu siguiente paso", "Your next step"),
+         L("Cómo orientar tu portfolio hacia rigging y qué buscan los estudios en un perfil junior.",
+           "How to steer your portfolio towards rigging and what studios look for in a junior profile.")),
+    ]
+    t_html = "\n".join(f'<div class="formato"><h3>{e(n[lang])}</h3><p>{e(t[lang])}</p></div>' for n, t in temas)
+    formatos = [
+        (L("Clase particular", "One-to-one session"), L("1 hora", "1 hour"),
+         L("Solo tú y tu trabajo: revisamos tu reel o tu rig con calma y resolvemos tus dudas.",
+           "Just you and your work: we review your reel or your rig properly and answer your questions.")),
+        (L("Clase en grupo", "Group session"), L("1 hora", "1 hour"),
+         L("Para varios compañeros que quieren trabajar el mismo tema o revisar sus reels juntos.",
+           "For a few classmates who want to work on the same topic or review their reels together.")),
+    ]
+    f_html = "\n".join(f'<div class="formato"><h3>{e(n[lang])}</h3><span class="meta">{e(d[lang])}</span><p>{e(t[lang])}</p></div>' for n, d, t in formatos)
+    cond = [
+        (L("Modalidad", "Format"), L("Online en directo, o presencial en Madrid.", "Live online, or in person in Madrid.")),
+        (L("Presupuesto", "Quote"), L("Según el caso. Cuéntame qué necesitas y te paso presupuesto sin compromiso.",
+                                 "Depends on your case. Tell me what you need and I'll send you a no-obligation quote.")),
+    ]
+    c_html = "\n".join(f'<div class="condicion"><strong>{e(n[lang])}</strong>{e(t[lang])}</div>' for n, t in cond)
+    texto_contacto = ("Dime qué estudias y dónde, en qué te gustaría que te ayudara y, si lo tienes, el enlace a tu reel. Te respondo con un presupuesto." if es else
+                      "Tell me what and where you're studying, what you'd like help with and, if you have one, a link to your reel. I'll reply with a quote.")
+    return f"""{head(lang, "mentorias.html", titulo, desc, desc, "og-docencia.png")}
+{cabecera(lang, "", "mentorias.html")}
+<main>
+{hero_retrato(lang, eyebrow, h1, lead, botones)}
+
+<section id="temas"><div class="wrap">
+<div class="cab"><p class="eyebrow">{"Qué podemos ver" if es else "What we can cover"}</p><h2>{"Tu trabajo,<br><span>con ojos de estudio.</span>" if es else "Your work,<br><span>through a studio's eyes.</span>"}</h2></div>
+<div class="formatos tres">
+{t_html}
+</div>
+</div></section>
+
+<section id="formatos"><div class="wrap">
+<div class="cab"><p class="eyebrow">{"Formatos" if es else "Formats"}</p><h2>{"Una hora,<br><span>a tu medida.</span>" if es else "One hour,<br><span>tailored to you.</span>"}</h2></div>
+<div class="formatos dos">
+{f_html}
+</div>
+<div class="condiciones">
+{c_html}
+</div>
+</div></section>
+
+{contacto(lang, *(("Pide tu", "presupuesto.") if es else ("Ask for", "a quote.")), texto_contacto, asunto, cuerpo)}
+
+<div class="wrap puente"><p>{"¿Eres un <span>centro?</span>" if es else "Are you a <span>school?</span>"}</p><a class="btn" href="docencia.html">{"Ver seminarios" if es else "See seminars"}</a></div>
 </main>
 {pie(lang)}"""
 
@@ -474,6 +547,7 @@ if __name__ == "__main__":
         base = "" if lang == "es" else "en/"
         escribir(base + "index.html", profesional(lang))
         escribir(base + "docencia.html", docencia(lang))
+        escribir(base + "mentorias.html", mentorias(lang))
         for i, p in enumerate(PROYECTOS):
             escribir(base + url_proyecto(p), pagina_proyecto(lang, i))
     escribir("404.html", no_encontrada())
