@@ -76,6 +76,21 @@
       "anio": "",
       "permiso": "2026-11-11 · confirmado a Edu; foto de su perfil de LinkedIn",
       "publicar": true
+    },
+    {
+      "id": "angel-paez",
+      "nombre": "Ángel Páez",
+      "foto": "img/alumnos/angel-paez.jpg",
+      "reel": "https://vimeo.com/1105865873",
+      "linkedin": "https://www.linkedin.com/in/angel-paez/",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "2026-11-11 · confirmado a Edu; foto de su perfil de LinkedIn",
+      "publicar": true
     }
   ]
 }
