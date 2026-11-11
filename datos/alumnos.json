@@ -64,18 +64,18 @@
     },
     {
       "id": "jose-antonio-tomas-naranjo",
-      "nombre": "José Antonio Tomás Naranjo",
+      "nombre": "José Antonio Tomás",
       "foto": "img/alumnos/jose-antonio-tomas-naranjo.jpg",
-      "reel": "",
-      "linkedin": "",
+      "reel": "https://www.youtube.com/watch?v=0OwqQvHYysw",
+      "linkedin": "https://www.linkedin.com/in/jatomart/",
       "rol": {
         "es": "",
         "en": ""
       },
       "centro": "",
       "anio": "",
-      "permiso": "",
-      "publicar": false
+      "permiso": "2026-11-11 · confirmado a Edu; foto de su perfil de LinkedIn",
+      "publicar": true
     }
   ]
 }
