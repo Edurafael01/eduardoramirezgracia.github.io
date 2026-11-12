@@ -91,6 +91,21 @@
       "anio": "",
       "permiso": "2026-11-11 · confirmado a Edu; foto de su perfil de LinkedIn",
       "publicar": true
+    },
+    {
+      "id": "maria-diaz",
+      "nombre": "María Díaz",
+      "foto": "img/alumnos/maria-diaz.jpg",
+      "reel": "https://vimeo.com/1195682427",
+      "linkedin": "https://www.linkedin.com/in/maria-diaz-h/",
+      "rol": {
+        "es": "",
+        "en": ""
+      },
+      "centro": "",
+      "anio": "",
+      "permiso": "2026-11-12 · confirmado a Edu; foto de su perfil de LinkedIn",
+      "publicar": true
     }
   ]
 }
