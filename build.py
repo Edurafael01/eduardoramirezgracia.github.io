@@ -44,6 +44,9 @@ def _img(ruta):
     return ruta  # en los datos ya viene como img/...
 
 PERFIL = _cargar("perfil.json")
+# Dirección de la aplicación web de Apps Script que recibe el formulario de mentorías.
+# Vacía: el formulario abre un correo con los datos rellenos.
+FORM_MENTORIAS = PERFIL.get("formulario_mentorias", "")
 PROYECTOS = [dict(s=p["id"], t=p["titulo"], t1=p["portada_texto"][0], t2=p["portada_texto"][1], a=p["anio"],
                   img=p["imagen_web"], d=p["descripcion"], f=[(x["campo"], x["valor"]) for x in p["ficha"]],
                   video=(None if not p["video"] else (p["video"]["youtube"], p["video"]["inicio"],
@@ -458,7 +461,7 @@ def mentorias(lang):
     asunto = "Mentoría de rigging" if es else "Rigging mentoring"
     cuerpo = ("Qué estudias y dónde:\nEn qué te gustaría que te ayudara:\nEnlace a tu reel (si lo tienes):\nClase particular o en grupo (¿cuántas personas?):\nDisponibilidad:\n" if es else
               "What and where you're studying:\nWhat you'd like help with:\nLink to your reel (if you have one):\nOne-to-one or group (how many people?):\nAvailability:\n")
-    botones = (f'<a class="btn primario" href="{mailto(asunto, cuerpo)}">{"Pide tu presupuesto" if es else "Ask for a quote"}</a>'
+    botones = (f'<a class="btn primario" href="#inscripcion">{"Pide tu presupuesto" if es else "Ask for a quote"}</a>'
                f'<a class="btn" href="index.html">{"Ver mis proyectos" if es else "See my projects"}</a>')
     temas = [
         (L("Tu demo reel", "Your demo reel"),
@@ -511,10 +514,123 @@ def mentorias(lang):
 </div>
 </div></section>
 
+{formulario(lang)}
+
 {contacto(lang, *(("Pide tu", "presupuesto.") if es else ("Ask for", "a quote.")), texto_contacto, asunto, cuerpo)}
 
 <div class="wrap puente"><p>{"¿Eres un <span>centro?</span>" if es else "Are you a <span>school?</span>"}</p><a class="btn" href="docencia.html">{"Ver seminarios" if es else "See seminars"}</a></div>
 </main>
+{pie(lang)}"""
+
+def formulario(lang):
+    """Formulario de inscripción a mentorías. Envía a Apps Script (hoja y email de Edu); sin dirección, abre un correo."""
+    es = lang == "es"
+    t = lambda a, b: a if es else b
+    def campo(nombre, etiqueta, tipo="text", extra="", ayuda=""):
+        ay = f'<span class="ayuda">{e(ayuda)}</span>' if ayuda else ""
+        return f'<label class="campo"><span>{e(etiqueta)}</span>{ay}<input name="{nombre}" type="{tipo}" {extra}></label>'
+    disp = [("manana", t("Mañana", "Morning")), ("tarde", t("Tarde", "Afternoon")), ("finde", t("Fin de semana", "Weekend"))]
+    return f"""<section id="inscripcion"><div class="wrap">
+<div class="cab"><p class="eyebrow">{t("Inscripción", "Sign up")}</p><h2>{t("Cuéntame tu caso.<br><span>Te respondo yo.</span>", "Tell me about your case.<br><span>I'll reply myself.</span>")}</h2></div>
+<form class="formulario" data-destino="{e(FORM_MENTORIAS)}" data-email="{EMAIL}" data-asunto="{t("Mentoría de rigging", "Rigging mentoring")}">
+<div class="rejilla">
+{campo("nombre", t("Nombre", "Name"), extra='required maxlength="100" autocomplete="name"')}
+{campo("email", "Email", "email", 'required maxlength="150" autocomplete="email"')}
+{campo("estudios", t("Qué estudias y dónde", "What and where you study"), extra='required maxlength="200"')}
+{campo("reel", t("Enlace a tu reel (opcional)", "Link to your reel (optional)"), "url", 'maxlength="300" placeholder="https://"')}
+</div>
+<fieldset class="opciones"><legend>{t("Modalidad", "Format")}</legend>
+<label><input type="radio" name="modalidad" value="individual" required> {t("Individual", "One-to-one")}</label>
+<label><input type="radio" name="modalidad" value="grupo"> {t("En grupo", "Group")}</label>
+</fieldset>
+<fieldset class="opciones"><legend>{t("Disponibilidad aproximada", "Rough availability")}</legend>
+{"".join(f'<label><input type="checkbox" name="disponibilidad" value="{v}"> {e(n)}</label>' for v, n in disp)}
+</fieldset>
+<div class="trampa" aria-hidden="true"><label>Web <input name="web" tabindex="-1" autocomplete="off"></label></div>
+<label class="consentimiento"><input type="checkbox" name="consentimiento" value="si" required>
+<span>{t('He leído la <a href="privacidad.html">información sobre protección de datos</a> y acepto que Eduardo Ramírez Gracia use mis datos para responder a mi solicitud de mentoría.',
+        'I have read the <a href="privacidad.html">data protection information</a> and agree that Eduardo Ramírez Gracia may use my details to reply to my mentoring request.')}</span></label>
+<p class="info-datos">{t('<strong>Responsable:</strong> Eduardo Ramírez Gracia. <strong>Finalidad:</strong> gestionar tu solicitud de mentoría y contactarte sobre ella. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos a terceros; se guardan en Google (Drive y Gmail), que actúa como proveedor. <strong>Derechos:</strong> acceso, rectificación y supresión, entre otros, escribiendo a ' + EMAIL + '. <a href="privacidad.html">Más información</a>.',
+                          '<strong>Controller:</strong> Eduardo Ramírez Gracia. <strong>Purpose:</strong> handling your mentoring request and contacting you about it. <strong>Legal basis:</strong> your consent. <strong>Recipients:</strong> your details are not shared with third parties; they are stored with Google (Drive and Gmail), acting as a service provider. <strong>Your rights:</strong> access, rectification and erasure, among others, by writing to ' + EMAIL + '. <a href="privacidad.html">More information</a>.')}</p>
+<button class="btn primario" type="submit">{t("Enviar solicitud", "Send request")}</button>
+<p class="estado" role="status" aria-live="polite"></p>
+</form>
+</div></section>
+<script>
+/* Formulario de mentorías: envía a Apps Script; si no hay dirección configurada, abre un correo con los datos. */
+(function () {{
+  var f = document.querySelector(".formulario");
+  if (!f) return;
+  var estado = f.querySelector(".estado"), boton = f.querySelector("button");
+  var es = document.documentElement.lang === "es";
+  function aviso(txt, ok) {{ estado.textContent = txt; estado.className = "estado " + (ok ? "ok" : "error"); }}
+  f.addEventListener("submit", function (ev) {{
+    ev.preventDefault();
+    if (!f.reportValidity()) return;
+    var datos = new FormData(f);
+    if (datos.get("web")) return;
+    if (!f.dataset.destino) {{
+      var cuerpo = [["nombre", es ? "Nombre" : "Name"], ["email", "Email"], ["estudios", es ? "Qué estudio y dónde" : "What and where I study"],
+                    ["reel", "Reel"], ["modalidad", es ? "Modalidad" : "Format"]]
+        .map(function (c) {{ return c[1] + ": " + (datos.get(c[0]) || ""); }}).join("\\n") +
+        "\\n" + (es ? "Disponibilidad" : "Availability") + ": " + datos.getAll("disponibilidad").join(", ");
+      location.href = "mailto:" + f.dataset.email + "?subject=" + encodeURIComponent(f.dataset.asunto) + "&body=" + encodeURIComponent(cuerpo);
+      return;
+    }}
+    boton.disabled = true;
+    aviso(es ? "Enviando…" : "Sending…", true);
+    fetch(f.dataset.destino, {{ method: "POST", body: new URLSearchParams(datos) }})
+      .then(function (r) {{ return r.json(); }})
+      .then(function (j) {{
+        if (!j.ok) throw new Error(j.error || "");
+        f.reset();
+        aviso(es ? "Recibido. Te escribo en unos días." : "Received. I'll get back to you within a few days.", true);
+      }})
+      .catch(function () {{
+        aviso((es ? "No se ha podido enviar. Escríbeme a " : "It could not be sent. Please write to ") + f.dataset.email, false);
+      }})
+      .then(function () {{ boton.disabled = false; }});
+  }});
+}})();
+</script>"""
+
+def privacidad(lang):
+    """Política de privacidad del formulario de mentorías. BORRADOR hasta que Edu lo valide."""
+    es = lang == "es"
+    t = lambda a, b: a if es else b
+    secciones = [
+        (t("Quién es el responsable", "Who is responsible"),
+         t(f"Eduardo Ramírez Gracia. Contacto: {EMAIL}.", f"Eduardo Ramírez Gracia. Contact: {EMAIL}.")),
+        (t("Qué datos recojo", "What data I collect"),
+         t("Los que escribes en el formulario de mentorías: nombre, email, qué estudias y dónde, el enlace a tu reel si lo das, la modalidad y tu disponibilidad aproximada. No pido más.",
+           "Only what you enter in the mentoring form: name, email, what and where you study, a link to your reel if you give one, the format and your rough availability. Nothing else.")),
+        (t("Para qué", "What for"),
+         t("Para responder a tu solicitud, enviarte un presupuesto y organizar la mentoría si sigues adelante. No los uso para publicidad ni para nada más.",
+           "To reply to your request, send you a quote and organise the mentoring if you go ahead. They are not used for advertising or anything else.")),
+        (t("Base legal", "Legal basis"),
+         t("Tu consentimiento, que das al marcar la casilla del formulario. Puedes retirarlo cuando quieras.",
+           "Your consent, given by ticking the box on the form. You can withdraw it at any time.")),
+        (t("Dónde se guardan y quién los ve", "Where they are stored and who sees them"),
+         t("Se guardan en una hoja de cálculo de Google Drive y llegan a mi correo de Gmail. Google actúa como proveedor de esos servicios. No cedo tus datos a nadie más.",
+           "They are stored in a Google Drive spreadsheet and arrive in my Gmail inbox. Google acts as the provider of those services. I do not share your details with anyone else.")),
+        (t("Cuánto tiempo", "How long"),
+         t("Mientras haga falta para gestionar tu solicitud o la mentoría. Después los borro, salvo que la ley obligue a conservar algo.",
+           "For as long as needed to handle your request or the mentoring. After that I delete them, unless the law requires keeping something.")),
+        (t("Tus derechos", "Your rights"),
+         t(f"Puedes pedir acceder a tus datos, corregirlos, borrarlos, limitar su uso u oponerte, y llevártelos, escribiendo a {EMAIL}. Si crees que no se han tratado bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).",
+           f"You can ask to access, correct, delete, restrict or object to the use of your data, and to take it with you, by writing to {EMAIL}. If you think it has not been handled properly, you can complain to the Spanish Data Protection Agency (aepd.es).")),
+    ]
+    cuerpo = "\n".join(f"<h3>{e(h)}</h3><p>{e(p)}</p>" for h, p in secciones)
+    titulo = t("Protección de datos · ", "Data protection · ") + NOMBRE
+    desc = t("Información sobre protección de datos del formulario de mentorías.", "Data protection information for the mentoring form.")
+    return f"""{head(lang, "privacidad.html", titulo, desc, desc, "og-docencia.png")}
+{cabecera(lang, "", "privacidad.html")}
+<main><section class="legal"><div class="wrap">
+<p class="eyebrow">{t("Protección de datos", "Data protection")}</p>
+<h1>{t("Tus datos,<br><span>para lo justo.</span>", "Your data,<br><span>only what's needed.</span>")}</h1>
+{cuerpo}
+<p><a class="btn" href="mentorias.html#inscripcion">{t("Volver al formulario", "Back to the form")}</a></p>
+</div></section></main>
 {pie(lang)}"""
 
 def no_encontrada():
@@ -548,6 +664,7 @@ if __name__ == "__main__":
         escribir(base + "index.html", profesional(lang))
         escribir(base + "docencia.html", docencia(lang))
         escribir(base + "mentorias.html", mentorias(lang))
+        escribir(base + "privacidad.html", privacidad(lang))
         for i, p in enumerate(PROYECTOS):
             escribir(base + url_proyecto(p), pagina_proyecto(lang, i))
     escribir("404.html", no_encontrada())

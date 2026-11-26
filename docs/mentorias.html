@@ -42,7 +42,7 @@
 <p class="eyebrow">Mentorías · Para estudiantes</p>
 <h1>¿Estudias para animación o VFX?<br><span>Revisamos tu reel.</span></h1>
 <p class="lead">Si te estás formando en animación o VFX y quieres la mirada de un rigger que trabaja en producción, te ayudo con tu reel y con tus dudas de rigging. Cuéntame tu caso y te preparo un presupuesto.</p>
-<div class="btns"><a class="btn primario" href="mailto:eduardoramirezgracia@gmail.com?subject=Mentor%C3%ADa%20de%20rigging&amp;body=Qu%C3%A9%20estudias%20y%20d%C3%B3nde%3A%0AEn%20qu%C3%A9%20te%20gustar%C3%ADa%20que%20te%20ayudara%3A%0AEnlace%20a%20tu%20reel%20%28si%20lo%20tienes%29%3A%0AClase%20particular%20o%20en%20grupo%20%28%C2%BFcu%C3%A1ntas%20personas%3F%29%3A%0ADisponibilidad%3A%0A">Pide tu presupuesto</a><a class="btn" href="index.html">Ver mis proyectos</a></div>
+<div class="btns"><a class="btn primario" href="#inscripcion">Pide tu presupuesto</a><a class="btn" href="index.html">Ver mis proyectos</a></div>
 </div>
 <img class="retrato" src="img/retrato.jpg" alt="Retrato de Eduardo Ramírez Gracia" width="260" height="260">
 </div></section>
@@ -67,6 +67,68 @@
 <div class="condicion"><strong>Presupuesto</strong>Según el caso. Cuéntame qué necesitas y te paso presupuesto sin compromiso.</div>
 </div>
 </div></section>
+
+<section id="inscripcion"><div class="wrap">
+<div class="cab"><p class="eyebrow">Inscripción</p><h2>Cuéntame tu caso.<br><span>Te respondo yo.</span></h2></div>
+<form class="formulario" data-destino="https://script.google.com/macros/s/AKfycbwt6PdK7_3ZkYg2aqr1nK3jGLH_Kpyt3KJX5TSvVGZbdqZMxPwcoGa3cY_R5zi9ta4Q/exec" data-email="eduardoramirezgracia@gmail.com" data-asunto="Mentoría de rigging">
+<div class="rejilla">
+<label class="campo"><span>Nombre</span><input name="nombre" type="text" required maxlength="100" autocomplete="name"></label>
+<label class="campo"><span>Email</span><input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+<label class="campo"><span>Qué estudias y dónde</span><input name="estudios" type="text" required maxlength="200"></label>
+<label class="campo"><span>Enlace a tu reel (opcional)</span><input name="reel" type="url" maxlength="300" placeholder="https://"></label>
+</div>
+<fieldset class="opciones"><legend>Modalidad</legend>
+<label><input type="radio" name="modalidad" value="individual" required> Individual</label>
+<label><input type="radio" name="modalidad" value="grupo"> En grupo</label>
+</fieldset>
+<fieldset class="opciones"><legend>Disponibilidad aproximada</legend>
+<label><input type="checkbox" name="disponibilidad" value="manana"> Mañana</label><label><input type="checkbox" name="disponibilidad" value="tarde"> Tarde</label><label><input type="checkbox" name="disponibilidad" value="finde"> Fin de semana</label>
+</fieldset>
+<div class="trampa" aria-hidden="true"><label>Web <input name="web" tabindex="-1" autocomplete="off"></label></div>
+<label class="consentimiento"><input type="checkbox" name="consentimiento" value="si" required>
+<span>He leído la <a href="privacidad.html">información sobre protección de datos</a> y acepto que Eduardo Ramírez Gracia use mis datos para responder a mi solicitud de mentoría.</span></label>
+<p class="info-datos"><strong>Responsable:</strong> Eduardo Ramírez Gracia. <strong>Finalidad:</strong> gestionar tu solicitud de mentoría y contactarte sobre ella. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos a terceros; se guardan en Google (Drive y Gmail), que actúa como proveedor. <strong>Derechos:</strong> acceso, rectificación y supresión, entre otros, escribiendo a eduardoramirezgracia@gmail.com. <a href="privacidad.html">Más información</a>.</p>
+<button class="btn primario" type="submit">Enviar solicitud</button>
+<p class="estado" role="status" aria-live="polite"></p>
+</form>
+</div></section>
+<script>
+/* Formulario de mentorías: envía a Apps Script; si no hay dirección configurada, abre un correo con los datos. */
+(function () {
+  var f = document.querySelector(".formulario");
+  if (!f) return;
+  var estado = f.querySelector(".estado"), boton = f.querySelector("button");
+  var es = document.documentElement.lang === "es";
+  function aviso(txt, ok) { estado.textContent = txt; estado.className = "estado " + (ok ? "ok" : "error"); }
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    if (!f.reportValidity()) return;
+    var datos = new FormData(f);
+    if (datos.get("web")) return;
+    if (!f.dataset.destino) {
+      var cuerpo = [["nombre", es ? "Nombre" : "Name"], ["email", "Email"], ["estudios", es ? "Qué estudio y dónde" : "What and where I study"],
+                    ["reel", "Reel"], ["modalidad", es ? "Modalidad" : "Format"]]
+        .map(function (c) { return c[1] + ": " + (datos.get(c[0]) || ""); }).join("\n") +
+        "\n" + (es ? "Disponibilidad" : "Availability") + ": " + datos.getAll("disponibilidad").join(", ");
+      location.href = "mailto:" + f.dataset.email + "?subject=" + encodeURIComponent(f.dataset.asunto) + "&body=" + encodeURIComponent(cuerpo);
+      return;
+    }
+    boton.disabled = true;
+    aviso(es ? "Enviando…" : "Sending…", true);
+    fetch(f.dataset.destino, { method: "POST", body: new URLSearchParams(datos) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j.ok) throw new Error(j.error || "");
+        f.reset();
+        aviso(es ? "Recibido. Te escribo en unos días." : "Received. I'll get back to you within a few days.", true);
+      })
+      .catch(function () {
+        aviso((es ? "No se ha podido enviar. Escríbeme a " : "It could not be sent. Please write to ") + f.dataset.email, false);
+      })
+      .then(function () { boton.disabled = false; });
+  });
+})();
+</script>
 
 <section id="contacto" class="contacto"><div class="wrap">
 <p class="eyebrow">Contacto</p>
